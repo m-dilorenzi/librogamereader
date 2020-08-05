@@ -79,8 +79,7 @@ app.post('/', requestVerifier, function(req, res) {
 function stopAndExit() 
 {
     const speechOutput = STOP_MESSAGE; 
-    var jsonObj = buildResponse(speechOutput, true, '');
-    return jsonObj;
+    return buildResponseWithRepromt(speechOutput, true, '', '');
 }
 
 
