@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/m-dilorenzi/librogamereader/issues"
   },
-  "homepage": "https://github.com/m-dilorenzi/librogamereader#readme"
+  "homepage": "https://github.com/m-dilorenzi/librogamereader#readme",
+  "dependencies": {
+    "ask-sdk-express-adapter": "^2.1.0",
+    "express": "^4.17.1"
+  }
 }
