@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/m-dilorenzi/librogamereader#readme",
   "dependencies": {
+    "alexa-verifier": "^2.0.1",
     "ask-sdk-express-adapter": "^2.1.0",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1"
   }
 }
