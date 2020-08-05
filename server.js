@@ -62,7 +62,7 @@ app.post('/', requestVerifier, function(req, res) {
                 res.json(stopAndExit());
                 break;
             
-            case 'getNewChapterIntent':
+            case 'getNextChapterIntent':
                 res.json(getNewChapter());
                 break;
 
@@ -75,7 +75,7 @@ app.post('/', requestVerifier, function(req, res) {
 function stopAndExit() 
 {
     const speechOutput = STOP_MESSAGE
-    var jsonObj = buildResponse(speechOutput, true, "");
+    var jsonObj = buildResponse(speechOutput, true, '');
     return jsonObj;
 }
 
