@@ -12,11 +12,9 @@ console.log('Server is listening on port: ' + port);
 var isFisrtTime = true;
 
 const SKILL_NAME = 'LibroGameReader';
-const HELP_MESSAGE = 'Ora puoi implementare la vera struttura!';
 const STOP_MESSAGE = 'Ciao, alla prossima!';
 const PAUSE = '<break time="0.3s" />'
 const WHISPER = '<amazon:effect name="whispered"/>'
-const HELP_REPROMPT = 'What can I help you with?';
 
 app.use(bodyParser.json({
     verify: function getRawBody(req, res, buf) {
@@ -53,61 +51,47 @@ app.post('/', requestVerifier, function(req, res) {
     // console.log(req);
 
     if (req.body.request.type === 'LaunchRequest') {
-        res.json(getNewChapter());
+        res.json(helloMessage());
         isFisrtTime = false
     } else if (req.body.request.type === 'SessionEndedRequest') { /* ... */
         log("Session End")
     } else if (req.body.request.type === 'IntentRequest') {
-        switch (req.body.request.intent.name) {
-        case 'AMAZON.YesIntent':
-            res.json(getNewChapter());
-            break;
-        case 'AMAZON.NoIntent':
-            res.json(stopAndExit());
-            break;
-        case 'AMAZON.HelpIntent':
-            res.json(help());
-            break;
-        default:
+        switch (req.body.request.intent.name) 
+        {
+            case 'AMAZON.StopIntent':
+                res.json(stopAndExit());
+                break;
+            
+            case 'getNewChapterIntent':
+                res.json(getNewChapter());
+                break;
 
+            default:
         }
     }
 });
 
-function handleDataMissing() 
-{
-     // return buildResponse(MISSING_DETAILS, true, null)
-}
 
 function stopAndExit() 
 {
     const speechOutput = STOP_MESSAGE
     var jsonObj = buildResponse(speechOutput, true, "");
-    isFisrtTime = true;
     return jsonObj;
 }
 
-function help() 
-{
-    const speechOutput = HELP_MESSAGE
-    const reprompt = HELP_REPROMPT
-    var jsonObj = buildResponseWithRepromt(speechOutput, false, "", reprompt);
-
-    return jsonObj;
-}
 
 function getNewChapter() 
 {
-    console.log('Try to obtain new chapter');
-    var welcomeSpeechOutput = 'Benvenuto su libro game reader! <break time="0.3s" />'
-    if (!isFisrtTime) {
-        welcomeSpeechOutput = '';
-    }
+    const speechOutput = WHISPER + ' qua ti leggerò il capitolo del tuo libro' + PAUSE;
+    return buildResponseWithRepromt(speechOutput, false, '', '');
+}
 
-    const tempOutput = WHISPER + HELP_MESSAGE + PAUSE;
-    const speechOutput = welcomeSpeechOutput + tempOutput;
-    
-    return buildResponseWithRepromt(speechOutput, false, HELP_MESSAGE, '');
+function helloMessage()
+{
+    const speechOutput  = 'Ciao! Benvenuto su LibreGameReader! Con questa skill potrai \
+                        interagire con un libro gioco in maniera dinamica!';
+    var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
+    return jsonObj;
 }
 
 function buildResponse(speechText, shouldEndSession, cardText) {
