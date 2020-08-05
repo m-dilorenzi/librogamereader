@@ -59,7 +59,7 @@ app.post('/', requestVerifier, function(req, res) {
     } else if (req.body.request.type === 'IntentRequest') {
         switch (req.body.request.intent.name) 
         {
-            case 'exitIntent':
+            case 'AMAZON.StopIntent':
                 console.log('Exit from the skill...')
                 res.json(stopAndExit());
                 break;
@@ -137,11 +137,11 @@ function buildResponseWithRepromt(speechText, shouldEndSession, cardText, reprom
         "text": cardText
         },
         "reprompt": {
-        "outputSpeech": {
-            "type": "PlainText",
-            "text": reprompt,
-            "ssml": reprompt
-        }
+            "outputSpeech": {
+                "type": "PlainText",
+                "text": reprompt,
+                "ssml": reprompt
+            }
         }
     }
     }
