@@ -12,7 +12,6 @@ console.log('Server is listening on port: ' + port);
 var isFisrtTime = true;
 
 const SKILL_NAME = 'LibroGameReader';
-const STOP_MESSAGE = 'Ciao, alla prossima!';
 const PAUSE = '<break time="0.3s" />'
 const WHISPER = '<amazon:effect name="whispered"/>'
 
@@ -55,7 +54,7 @@ app.post('/', requestVerifier, function(req, res) {
         console.log('Open the skill...');
         res.json(helloMessage());
     } else if (req.body.request.type === 'SessionEndedRequest') 
-    { /* ... */
+    { 
         log('Session end...');
     } else if (req.body.request.type === 'IntentRequest') {
         switch (req.body.request.intent.name) 
@@ -78,8 +77,9 @@ app.post('/', requestVerifier, function(req, res) {
 
 function stopAndExit() 
 {
-    const speechOutput = STOP_MESSAGE; 
-    return buildResponseWithRepromt(speechOutput, true, '', '');
+    const speechOutput = 'Ciao, buona giornata e torna presto!';
+    var jsonObj = buildResponse(speechOutput, true, '');
+    return jsonObj;
 }
 
 
