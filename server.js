@@ -59,7 +59,7 @@ app.post('/', requestVerifier, function(req, res) {
     } else if (req.body.request.type === 'IntentRequest') {
         switch (req.body.request.intent.name) 
         {
-            case 'AMAZON.StopIntent':
+            case 'exitIntent':
                 console.log('Exit from the skill...')
                 res.json(stopAndExit());
                 break;
