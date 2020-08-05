@@ -50,19 +50,23 @@ app.post('/', requestVerifier, function(req, res) {
 
     // console.log(req);
 
-    if (req.body.request.type === 'LaunchRequest') {
+    if (req.body.request.type === 'LaunchRequest') 
+    {
+        console.log('Open the skill...');
         res.json(helloMessage());
-        isFisrtTime = false
-    } else if (req.body.request.type === 'SessionEndedRequest') { /* ... */
-        log("Session End")
+    } else if (req.body.request.type === 'SessionEndedRequest') 
+    { /* ... */
+        log('Session end...');
     } else if (req.body.request.type === 'IntentRequest') {
         switch (req.body.request.intent.name) 
         {
             case 'AMAZON.StopIntent':
+                console.log('Exit from the skill...')
                 res.json(stopAndExit());
                 break;
             
             case 'getNextChapterIntent':
+                console.log('Get new chapter...');
                 res.json(getNewChapter());
                 break;
 
@@ -74,7 +78,7 @@ app.post('/', requestVerifier, function(req, res) {
 
 function stopAndExit() 
 {
-    const speechOutput = STOP_MESSAGE
+    const speechOutput = STOP_MESSAGE; 
     var jsonObj = buildResponse(speechOutput, true, '');
     return jsonObj;
 }
