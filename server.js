@@ -50,10 +50,10 @@ function log() {
 
 app.post('/', requestVerifier, function(req, res) {
 
-    console.log(req);
+    // console.log(req);
 
     if (req.body.request.type === 'LaunchRequest') {
-        res.json(getNewHero());
+        res.json(getNewChapter());
         isFisrtTime = false
     } else if (req.body.request.type === 'SessionEndedRequest') { /* ... */
         log("Session End")
@@ -76,14 +76,14 @@ app.post('/', requestVerifier, function(req, res) {
 
 function handleDataMissing() 
 {
-    return buildResponse(MISSING_DETAILS, true, null)
+     // return buildResponse(MISSING_DETAILS, true, null)
 }
 
 function stopAndExit() 
 {
     const speechOutput = STOP_MESSAGE
     var jsonObj = buildResponse(speechOutput, true, "");
-    return jsonObj;
+    // return jsonObj;
 }
 
 function help() 
@@ -92,11 +92,12 @@ function help()
     const reprompt = HELP_REPROMPT
     var jsonObj = buildResponseWithRepromt(speechOutput, false, "", reprompt);
 
-    return jsonObj;
+    // return jsonObj;
 }
 
 function getNewChapter() 
 {
+    console.log('Try to obtain new chapter');
     var welcomeSpeechOutput = 'Benvenuto su libro game reader! <break time="0.3s" />'
     if (!isFisrtTime) {
         welcomeSpeechOutput = '';
