@@ -66,7 +66,8 @@ app.post('/', requestVerifier, function(req, res) {
             
             case 'getNextChapterIntent':
                 console.log('Get new chapter...');
-                res.json(getNewChapter());
+                var chapter = req.body.request.intent.slots.capitolo.value;
+                res.json(getNewChapter(chapter));
                 break;
 
             default:
@@ -83,9 +84,9 @@ function stopAndExit()
 }
 
 
-function getNewChapter() 
+function getNewChapter(chapter) 
 {
-    const speechOutput = WHISPER + ' qua ti leggerò il capitolo del tuo libro' + PAUSE;
+    const speechOutput = WHISPER + ' qua ti leggerò il capitolo '+ chapter +' del tuo libro' + PAUSE;
     return buildResponseWithRepromt(speechOutput, false, '', '');
 }
 
