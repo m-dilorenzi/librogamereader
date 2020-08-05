@@ -12,7 +12,7 @@ console.log('Server is listening on port: ' + port);
 var isFisrtTime = true;
 
 const SKILL_NAME = 'LibroGameReader';
-const HELP_MESSAGE = 'Ciao, ora puoi implementare la vera struttura!';
+const HELP_MESSAGE = 'Ora puoi implementare la vera struttura!';
 const STOP_MESSAGE = 'Ciao, alla prossima!';
 const PAUSE = '<break time="0.3s" />'
 const WHISPER = '<amazon:effect name="whispered"/>'
@@ -83,7 +83,8 @@ function stopAndExit()
 {
     const speechOutput = STOP_MESSAGE
     var jsonObj = buildResponse(speechOutput, true, "");
-    // return jsonObj;
+    isFisrtTime = true;
+    return jsonObj;
 }
 
 function help() 
@@ -92,7 +93,7 @@ function help()
     const reprompt = HELP_REPROMPT
     var jsonObj = buildResponseWithRepromt(speechOutput, false, "", reprompt);
 
-    // return jsonObj;
+    return jsonObj;
 }
 
 function getNewChapter() 
