@@ -75,7 +75,6 @@ app.post('/', requestVerifier, function(req, res) {
                 break;
 
             default:
-                console.log(process.env.ACTUAL_CHAPTER);
         }
     }
 });
@@ -93,15 +92,24 @@ function getNewChapter(chapter)
 {
     if(process.env.ACTUAL_CHAPTER != 0)
     {
-        if((chapter != process.env.ACTUAL_CHAPTER) && allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.includes(chapter))
+        if((chapter != process.env.ACTUAL_CHAPTER) && allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.includes(chapter) == true)
         {
+            
             process.env.ACTUAL_CHAPTER = chapter;
             var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
             const speechOutput = WHISPER + chapterToRead + PAUSE;
             return buildResponseWithRepromt(speechOutput, false, '', '');
+            
         }
         else
         {
+            var speechOutput = 'I capitoli con cui puoi proseguire sono ';
+            for(var i = 0; i < allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.lenght; i++)
+            {
+                speechOutput += allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i]+' ';
+            }
+            return buildResponseWithRepromt(speechOutput, false, '', '');
+            /*
             if(chapter == process.env.ACTUAL_CHAPTER)
             {
                 const speechOutput = 'Ti trovi già al capitolo '+chapter;
@@ -112,6 +120,7 @@ function getNewChapter(chapter)
                 const speechOutput = 'Non puoi proseguire andando al capitolo '+chapter;
                 return buildResponseWithRepromt(speechOutput, false, '', '');
             }
+            */
         }
     }
     else
