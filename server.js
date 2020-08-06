@@ -90,6 +90,7 @@ function stopAndExit()
 
 function getNewChapter(chapter) 
 {
+    const allChapters = convertToJson();
     console.log('Try to get chapter...'+chapter);
     console.log('Possible next chapter: '+allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter);
     if(process.env.ACTUAL_CHAPTER != 0)
