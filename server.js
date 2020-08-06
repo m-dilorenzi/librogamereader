@@ -92,7 +92,11 @@ function getNewChapter(chapter)
 {
     const allChapters = convertToJson();
     console.log('Try to get chapter...'+chapter);
-    console.log('Possible next chapter: '+allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter);
+    if(process.env.ACTUAL_CHAPTER == 0)
+        console.log('Possible next chapters: 1');
+    else
+        console.log('Possible next chapter: '+allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter);
+    
     if(process.env.ACTUAL_CHAPTER != 0)
     {
         if((chapter != process.env.ACTUAL_CHAPTER) && allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.includes(chapter) == true)
