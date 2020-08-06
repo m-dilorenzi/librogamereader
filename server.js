@@ -99,35 +99,31 @@ function getNewChapter(chapter)
     
     if(process.env.ACTUAL_CHAPTER != 0)
     {
-        if((chapter != process.env.ACTUAL_CHAPTER) && allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.includes(chapter) == true)
+        if((chapter != process.env.ACTUAL_CHAPTER))
         {
+            for(var i = 0; i < allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length; i++)
+            {
+                if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
+                {
+                    process.env.ACTUAL_CHAPTER = chapter;
+                    var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
+                    const speechOutput = WHISPER + chapterToRead + PAUSE;
+                    return buildResponseWithRepromt(speechOutput, false, '', '');
+                }
+            }
             
-            process.env.ACTUAL_CHAPTER = chapter;
-            var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
-            const speechOutput = WHISPER + chapterToRead + PAUSE;
+            var speechOutput = 'Puoi proseguire andando solamente ai capitoli: ';
+            for(var i = 0; i < allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length; i++)
+            {
+                speechOutput += allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i]+', ';
+            }
             return buildResponseWithRepromt(speechOutput, false, '', '');
             
         }
         else
-        {
-            var speechOutput = 'I capitoli con cui puoi proseguire sono ';
-            for(var i = 0; i < allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.lenght; i++)
-            {
-                speechOutput += allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i]+' ';
-            }
-            return buildResponseWithRepromt(speechOutput, false, '', '');
-            
-            if(chapter == process.env.ACTUAL_CHAPTER)
-            {
-                const speechOutput = 'Ti trovi già al capitolo '+chapter;
-                return buildResponseWithRepromt(speechOutput, false, '', '');
-            }
-            else
-            {
-                const speechOutput = 'Non puoi proseguire andando al capitolo '+chapter;
-                return buildResponseWithRepromt(speechOutput, false, '', '');
-            }
-            
+        {  
+            const speechOutput = 'Ti trovi già al capitolo '+chapter;
+            return buildResponseWithRepromt(speechOutput, false, '', '');            
         }
     }
     else
