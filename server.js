@@ -91,13 +91,14 @@ function stopAndExit()
 function getNewChapter(chapter) 
 {
     const allChapters = convertToJson();
-    const nextPossibleChapters = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter;
     console.log('Try to get chapter...'+chapter);
     if(process.env.ACTUAL_CHAPTER == 0)
         console.log('Possible next chapters: 1');
     else
+    {
+        const nextPossibleChapters = allChapters.chapters.chapter[(chapter-1)].nextChapters.nextChapter;
         console.log('Possible next chapter: '+nextPossibleChapters);
-    
+    }
     if(process.env.ACTUAL_CHAPTER != 0)
     {
         if((chapter != process.env.ACTUAL_CHAPTER))
