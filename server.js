@@ -93,6 +93,7 @@ function getNewChapter(chapter)
     const allChapters = convertToJson();
     if(process.env.ACTUAL_CHAPTER != 0)
     {
+        console.log(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter);
         var speechOutput = 'ti trovi al capitolo '+process.env.ACTUAL_CHAPTER+' e puoi andare ai capitoli ';
             for(var i = 0; i < allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.lenght; i++)
             {
