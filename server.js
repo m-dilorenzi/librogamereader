@@ -101,8 +101,12 @@ function getNewChapter(chapter)
     { 
         if((chapter != process.env.ACTUAL_CHAPTER))
         {
-            console.log(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length);
-            for(var i = 0; i < allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length; i++)
+            if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length == undefined)
+                var length = 1;
+            else
+                var length = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length;
+
+            for(var i = 0; i < length; i++)
             {
                 if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
                 {
