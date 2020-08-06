@@ -7,7 +7,7 @@ let express = require('express'),
   path = require('path'),
   app = express();
 
-const fileNamePath = path.join(__dirname, "./04.xml");
+const fileNamePath = "./04.xml");
 let alexaVerifier = require('alexa-verifier');
 
 app.listen(port);
