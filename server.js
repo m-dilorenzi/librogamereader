@@ -95,17 +95,15 @@ function getNewChapter(chapter)
     if(process.env.ACTUAL_CHAPTER == 0)
         console.log('Possible next chapters: 1');
     else
-    {
-        const nextPossibleChapters = allChapters.chapters.chapter[(chapter-1)].nextChapters.nextChapter;
-        console.log('Possible next chapter: '+nextPossibleChapters);
-    }
+        console.log('Possible next chapter: '+allChapters.chapters.chapter[(chapter-1)].nextChapters.nextChapter);
+
     if(process.env.ACTUAL_CHAPTER != 0)
     {
         if((chapter != process.env.ACTUAL_CHAPTER))
         {
-            for(var i = 0; i < nextPossibleChapters.length; i++)
+            for(var i = 0; i < allChapters.chapters.chapter[(chapter-1)].nextChapters.nextChapter.length; i++)
             {
-                if(chapter == nextPossibleChapters[i])
+                if(chapter == allChapters.chapters.chapter[(chapter-1)].nextChapters.nextChapter[i])
                 {
                     process.env.ACTUAL_CHAPTER = chapter;
                     var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
