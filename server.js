@@ -90,6 +90,7 @@ function stopAndExit()
 
 function getNewChapter(chapter) 
 {
+    const allChapters = convertToJson();
     if(process.env.ACTUAL_CHAPTER != 0)
     {
         var speechOutput = 'ti trovi al capitolo '+process.env.ACTUAL_CHAPTER+' e puoi andare ai capitoli ';
