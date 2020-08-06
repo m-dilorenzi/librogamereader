@@ -90,24 +90,41 @@ function stopAndExit()
 
 function getNewChapter(chapter) 
 {
-    var allChapters = convertToJson();
-    if((chapter != process.env.ACTUAL_CHAPTER) && allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.includes(chapter))
+    if(process.env.ACTUAL_CHAPTER != 0)
     {
-        process.env.ACTUAL_CHAPTER = chapter;
-        var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
-        const speechOutput = WHISPER + chapterToRead + PAUSE;
-        return buildResponseWithRepromt(speechOutput, false, '', '');
-    }
-    else
-    {
-        if(chapter == process.env.ACTUAL_CHAPTER)
+        if((chapter != process.env.ACTUAL_CHAPTER) && allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.includes(chapter))
         {
-            const speechOutput = 'Ti trovi già al capitolo '+chapter;
+            process.env.ACTUAL_CHAPTER = chapter;
+            var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
+            const speechOutput = WHISPER + chapterToRead + PAUSE;
             return buildResponseWithRepromt(speechOutput, false, '', '');
         }
         else
         {
-            const speechOutput = 'Non puoi proseguire andando al capitolo '+chapter;
+            if(chapter == process.env.ACTUAL_CHAPTER)
+            {
+                const speechOutput = 'Ti trovi già al capitolo '+chapter;
+                return buildResponseWithRepromt(speechOutput, false, '', '');
+            }
+            else
+            {
+                const speechOutput = 'Non puoi proseguire andando al capitolo '+chapter;
+                return buildResponseWithRepromt(speechOutput, false, '', '');
+            }
+        }
+    }
+    else
+    {
+        if(chapter == 1)
+        {
+            process.env.ACTUAL_CHAPTER = chapter;
+            var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
+            const speechOutput = WHISPER + chapterToRead + PAUSE;
+            return buildResponseWithRepromt(speechOutput, false, '', '');   
+        }
+        else
+        {
+            const speechOutput = WHISPER + 'devi iniziare la lettura dal capitolo 1' + PAUSE;
             return buildResponseWithRepromt(speechOutput, false, '', '');
         }
     }
@@ -115,11 +132,11 @@ function getNewChapter(chapter)
 
 function helloMessage()
 {
-    var speechOutput  = 'Ciao! Benvenuto su LibreGameReader! Con questa skill potrai \
+    var speechOutput  = 'Ciao! Benvenuto su Libro Game Reader! Con questa skill potrai \
                         interagire con un libro gioco in maniera dinamica!';
     if(process.env.ACTUAL_CHAPTER == 0)
         speechOutput += ' Inizia ora a leggere il libro The Chasm of Doom, il quarto capitolo della \
-        famosa serie Lupo Solitario! Pronuncia \'vai al capitolo 1\' per iniziare la lettura!';
+        famosa serie Lupo Solitario! Pronuncia vai al capitolo 1 per iniziare la lettura!';
     else
         speechOutput += ' Riprendi la lettura dal capitolo '+process.env.ACTUAL_CHAPTER+'. Pronuncia rileggi\
         per riascoltarlo.';
