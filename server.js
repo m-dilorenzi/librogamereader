@@ -15,7 +15,7 @@ app.listen(port);
 
 console.log('Server is listening on port: ' + port);
 
-var allChapters = convertToJson();
+const allChapters = convertToJson();
 
 const SKILL_NAME = 'LibroGameReader';
 const PAUSE = '<break time="0.3s" />'
