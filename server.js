@@ -114,7 +114,7 @@ function getNewChapter(chapter)
 
 function helloMessage()
 {
-    const speechOutput  = 'Ciao! Benvenuto su LibreGameReader! Con questa skill potrai \
+    var speechOutput  = 'Ciao! Benvenuto su LibreGameReader! Con questa skill potrai \
                         interagire con un libro gioco in maniera dinamica!';
     if(process.env.ACTUAL_CHAPTER == 1)
         speechOutput += ' Inizia ora a leggere il libro The Chasm of Doom, il quarto capitolo della \
