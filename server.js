@@ -90,16 +90,16 @@ function stopAndExit()
 
 function getNewChapter(chapter) 
 {
-    if((chapter != proncess.env.ACTUAL_CHAPTER) && allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.includes(chapter))
+    if((chapter != process.env.ACTUAL_CHAPTER) && allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.includes(chapter))
     {
-        proncess.env.ACTUAL_CHAPTER = chapter;
+        process.env.ACTUAL_CHAPTER = chapter;
         var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
         const speechOutput = WHISPER + chapterToRead + PAUSE;
         return buildResponseWithRepromt(speechOutput, false, '', '');
     }
     else
     {
-        if(chapter == proncess.env.ACTUAL_CHAPTER)
+        if(chapter == process.env.ACTUAL_CHAPTER)
         {
             const speechOutput = 'Ti trovi già al capitolo '+chapter;
             return buildResponseWithRepromt(speechOutput, false, '', '');
