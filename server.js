@@ -106,7 +106,7 @@ function getNewChapter(chapter)
                 if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
                 {
                     process.env.ACTUAL_CHAPTER = chapter;
-                    var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
+                    var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
                     const speechOutput = WHISPER + chapterToRead + PAUSE;
                     return buildResponseWithRepromt(speechOutput, false, '', '');
                 }
