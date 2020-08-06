@@ -116,7 +116,7 @@ function helloMessage()
 {
     var speechOutput  = 'Ciao! Benvenuto su LibreGameReader! Con questa skill potrai \
                         interagire con un libro gioco in maniera dinamica!';
-    if(process.env.ACTUAL_CHAPTER == 1)
+    if(process.env.ACTUAL_CHAPTER == 0)
         speechOutput += ' Inizia ora a leggere il libro The Chasm of Doom, il quarto capitolo della \
         famosa serie Lupo Solitario! Pronuncia \'vai al capitolo 1\' per iniziare la lettura!';
     else
