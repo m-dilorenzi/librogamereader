@@ -91,19 +91,20 @@ function stopAndExit()
 function getNewChapter(chapter) 
 {
     const allChapters = convertToJson();
+    const nextPossibleChapters = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter;
     console.log('Try to get chapter...'+chapter);
     if(process.env.ACTUAL_CHAPTER == 0)
         console.log('Possible next chapters: 1');
     else
-        console.log('Possible next chapter: '+allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter);
+        console.log('Possible next chapter: '+nextPossibleChapters);
     
     if(process.env.ACTUAL_CHAPTER != 0)
     {
         if((chapter != process.env.ACTUAL_CHAPTER))
         {
-            for(var i = 0; i < allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length; i++)
+            for(var i = 0; i < nextPossibleChapters.length; i++)
             {
-                if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
+                if(chapter == nextPossibleChapters[i])
                 {
                     process.env.ACTUAL_CHAPTER = chapter;
                     var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
@@ -112,11 +113,7 @@ function getNewChapter(chapter)
                 }
             }
             
-            var speechOutput = 'Puoi proseguire andando solamente ai capitoli: ';
-            for(var i = 0; i < allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length; i++)
-            {
-                speechOutput += allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i]+', ';
-            }
+            var speechOutput = 'Puoi proseguire solamente andando ai capitoli: '+nextPossibleChapters;
             return buildResponseWithRepromt(speechOutput, false, '', '');
             
         }
