@@ -90,6 +90,7 @@ function stopAndExit()
 
 function getNewChapter(chapter) 
 {
+    var allChapters = convertToJson();
     if((chapter != process.env.ACTUAL_CHAPTER) && allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.includes(chapter))
     {
         process.env.ACTUAL_CHAPTER = chapter;
