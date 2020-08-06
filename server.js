@@ -98,7 +98,7 @@ function getNewChapter(chapter)
         console.log('Possible next chapter: '+allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter);
 
     if(process.env.ACTUAL_CHAPTER != 0)
-    {
+    { 
         if((chapter != process.env.ACTUAL_CHAPTER))
         {
             for(var i = 0; i < allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length; i++)
@@ -112,9 +112,12 @@ function getNewChapter(chapter)
                 }
             }
             
-            var speechOutput = 'Puoi proseguire solamente andando ai capitoli: '+nextPossibleChapters;
+            var speechOutput = 'Puoi proseguire solamente andando ai capitoli: ';
+            for(var i = 0; i < allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length; i++)
+            {
+                speechOutput += allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i]+ ' ';
+            }
             return buildResponseWithRepromt(speechOutput, false, '', '');
-            
         }
         else
         {  
