@@ -9,6 +9,7 @@ let express = require('express'),
 
 const fileNamePath = "./04.XML";
 let alexaVerifier = require('alexa-verifier');
+const { eventNames } = require('process');
 
 app.listen(port);
 
@@ -89,15 +90,39 @@ function stopAndExit()
 
 function getNewChapter(chapter) 
 {
-    var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
-    const speechOutput = WHISPER + chapterToRead + PAUSE;
-    return buildResponseWithRepromt(speechOutput, false, '', '');
+    if((chapter != proncess.env.ACTUAL_CHAPTER) && allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.includes(chapter))
+    {
+        proncess.env.ACTUAL_CHAPTER = chapter;
+        var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
+        const speechOutput = WHISPER + chapterToRead + PAUSE;
+        return buildResponseWithRepromt(speechOutput, false, '', '');
+    }
+    else
+    {
+        if(chapter == proncess.env.ACTUAL_CHAPTER)
+        {
+            const speechOutput = 'Ti trovi già al capitolo '+chapter;
+            return buildResponseWithRepromt(speechOutput, false, '', '');
+        }
+        else
+        {
+            const speechOutput = 'Non puoi proseguire andando al capitolo '+chapter;
+            return buildResponseWithRepromt(speechOutput, false, '', '');
+        }
+    }
 }
 
 function helloMessage()
 {
     const speechOutput  = 'Ciao! Benvenuto su LibreGameReader! Con questa skill potrai \
                         interagire con un libro gioco in maniera dinamica!';
+    if(process.env.ACTUAL_CHAPTER == 1)
+        speechOutput += ' Inizia ora a leggere il libro The Chasm of Doom, il quarto capitolo della \
+        famosa serie Lupo Solitario! Pronuncia \'vai al capitolo 1\' per iniziare la lettura!';
+    else
+        speechOutput += ' Riprendi la lettura dal capitolo '+process.env.ACTUAL_CHAPTER+'. Pronuncia rileggi\
+        per riascoltarlo.';
+    
     var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
     return jsonObj;
 }
