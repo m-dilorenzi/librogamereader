@@ -75,6 +75,7 @@ app.post('/', requestVerifier, function(req, res) {
                 break;
 
             default:
+                console.log(process.env.ACTUAL_CHAPTER);
         }
     }
 });
