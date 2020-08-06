@@ -102,24 +102,38 @@ function getNewChapter(chapter)
             else
                 var length = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length;
 
-            for(var i = 0; i < length; i++)
+            if(length != 1)
             {
-                console.log(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i]);
-                if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
+                for(var i = 0; i < length; i++)
+                {
+                    console.log(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i]);
+                    if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
+                    {
+                        process.env.ACTUAL_CHAPTER = chapter;
+                        var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
+                        const speechOutput = WHISPER + chapterToRead + PAUSE;
+                        return buildResponseWithRepromt(speechOutput, false, '', '');
+                    }
+                }
+                var speechOutput = 'Puoi proseguire solamente andando ai capitoli: ';
+                for(var i = 0; i < length; i++)
+                {
+                    speechOutput += allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i]+ ' ';
+                }
+                return buildResponseWithRepromt(speechOutput, false, '', '');
+            }
+            else
+            {
+                if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter)
                 {
                     process.env.ACTUAL_CHAPTER = chapter;
                     var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
                     const speechOutput = WHISPER + chapterToRead + PAUSE;
                     return buildResponseWithRepromt(speechOutput, false, '', '');
                 }
+                var speechOutput = 'Puoi proseguire solamente andando ai capitoli: '+allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter;
+                return buildResponseWithRepromt(speechOutput, false, '', '');
             }
-            
-            var speechOutput = 'Puoi proseguire solamente andando ai capitoli: ';
-            for(var i = 0; i < allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length; i++)
-            {
-                speechOutput += allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i]+ ' ';
-            }
-            return buildResponseWithRepromt(speechOutput, false, '', '');
         }
         else
         {  
