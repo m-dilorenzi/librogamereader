@@ -2,14 +2,19 @@
 let express = require('express'),
   bodyParser = require('body-parser'),
   port = process.env.PORT || 8080,
+  parser = require('fast-xml-parser'),
+  fs = require('fs'),
+  path = require('path'),
   app = express();
+
+const fileNamePath = path.join(__dirname, "./04.xml");
 let alexaVerifier = require('alexa-verifier');
 
 app.listen(port);
 
 console.log('Server is listening on port: ' + port);
 
-var isFisrtTime = true;
+var allChapters = convertToJson();
 
 const SKILL_NAME = 'LibroGameReader';
 const PAUSE = '<break time="0.3s" />'
@@ -46,8 +51,6 @@ function log() {
 }
 
 app.post('/', requestVerifier, function(req, res) {
-
-    // console.log(req);
 
     if (req.body.request.type === 'LaunchRequest') 
     {
@@ -86,7 +89,8 @@ function stopAndExit()
 
 function getNewChapter(chapter) 
 {
-    const speechOutput = WHISPER + ' qua ti leggerò il capitolo '+ chapter +' del tuo libro' + PAUSE;
+    var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
+    const speechOutput = WHISPER + chapterToRead + PAUSE;
     return buildResponseWithRepromt(speechOutput, false, '', '');
 }
 
@@ -149,3 +153,9 @@ function buildResponseWithRepromt(speechText, shouldEndSession, cardText, reprom
     return jsonObj;
 }
 
+function convertToJson()
+{
+    const xmlData = fs.readFileSync(fileNamePath).toString();
+    return parser.parse(xmlData); 
+    // console.log(jsonObj.chapters.chapter[0]);
+}
