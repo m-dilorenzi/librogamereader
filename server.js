@@ -53,6 +53,8 @@ function log() {
 
 app.post('/', requestVerifier, function(req, res) {
 
+    console.log('Richiesta da utente: '+req.body.session.user.userId);
+
     if (req.body.request.type === 'LaunchRequest') 
     {
         console.log('Open the skill...');
