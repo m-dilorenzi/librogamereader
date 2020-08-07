@@ -73,6 +73,11 @@ app.post('/', requestVerifier, function(req, res) {
                 var chapter = req.body.request.intent.slots.capitolo.value;
                 res.json(getNewChapter(chapter));
                 break;
+            case 'readAgainIntent':
+                console.log('Read again last chapter...');
+                res.json(readAgainChapter(process.env.ACTUAL_CHAPTER));
+                break;
+            
 
             default:
         }
@@ -106,7 +111,6 @@ function getNewChapter(chapter)
             {
                 for(var i = 0; i < length; i++)
                 {
-                    console.log(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i]);
                     if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
                     {
                         process.env.ACTUAL_CHAPTER = chapter;
@@ -156,6 +160,15 @@ function getNewChapter(chapter)
             return buildResponseWithRepromt(speechOutput, false, '', '');
         }
     }
+}
+
+function readAgainChapter(chapter)
+{
+    const allChapters = convertToJson();
+    console.log('Read again chapter '+chapter+'...');
+    var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
+    const speechOutput = WHISPER + chapterToRead + PAUSE;
+    return buildResponseWithRepromt(speechOutput, false, '', '');
 }
 
 function helloMessage()
@@ -227,6 +240,5 @@ function buildResponseWithRepromt(speechText, shouldEndSession, cardText, reprom
 function convertToJson()
 {
     const xmlData = fs.readFileSync(fileNamePath).toString();
-    return parser.parse(xmlData); 
-    // console.log(jsonObj.chapters.chapter[0]);
+    return parser.parse(xmlData);
 }
