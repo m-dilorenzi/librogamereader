@@ -7,6 +7,8 @@ let express = require('express'),
   path = require('path'),
   app = express();
 
+var database_connection = require('./database_connection');
+
 const fileNamePath = "./04.XML";
 let alexaVerifier = require('alexa-verifier');
 const { eventNames } = require('process');
@@ -54,6 +56,9 @@ function log() {
 app.post('/', requestVerifier, function(req, res) {
 
     console.log('Richiesta da utente: '+req.body.session.user.userId);
+    console.log('Ultimo capitolo letto: '+await database_connection.getActualChapter(req.body.session.user.userId));
+    
+    process.env.ACTUAL_CHAPTER = await database_connection.getActualChapter(req.body.session.user.userId); 
 
     if (req.body.request.type === 'LaunchRequest') 
     {
