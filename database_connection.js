@@ -13,6 +13,7 @@ async function getActualChapter(user_id) {
     } catch (error) {console.log(error);}
 }
 
+/*
 async function updateActualChapter(user_id, chapter) {
     var queryString = 'UPDATE lastvisitedchapter SET actual_chapter = '+chapter+' WHERE user_id=\''+user_id+'\';';
 
@@ -21,7 +22,7 @@ async function updateActualChapter(user_id, chapter) {
         return result;
     } catch (error) {console.log(error);}
 }
-
+*/
 
 exports.getActualChapter    = getActualChapter;
-exports.updateActualChapter = updateActualChapter;
+exports.pool                = pool;
