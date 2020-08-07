@@ -56,8 +56,8 @@ function log() {
 app.post('/', requestVerifier, function(req, res) {
 
     console.log('Richiesta da utente: '+req.body.session.user.userId);
-    console.log('Ultimo capitolo letto: '+await database_connection.getActualChapter(req.body.session.user.userId));
-    
+    console.log('Ultimo capitolo letto: ' + (await database_connection.getActualChapter(req.body.session.user.userId)));
+
     process.env.ACTUAL_CHAPTER = await database_connection.getActualChapter(req.body.session.user.userId); 
 
     if (req.body.request.type === 'LaunchRequest') 
