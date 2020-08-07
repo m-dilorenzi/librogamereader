@@ -55,10 +55,12 @@ function log() {
 
 app.post('/', requestVerifier, function(req, res) {
 
-    console.log('Richiesta da utente: '+req.body.session.user.userId);
-    console.log('Ultimo capitolo letto: ' + (await database_connection.getActualChapter(req.body.session.user.userId)));
+    var id_request = req.body.session.user.userId;
+    console.log('Richiesta da utente: '+id_request);
+    var actual_chapter = await database_connection.getActualChapter(id_request)
+    console.log('Ultimo capitolo letto: ' + actual_chapter);
 
-    process.env.ACTUAL_CHAPTER = await database_connection.getActualChapter(req.body.session.user.userId); 
+    process.env.ACTUAL_CHAPTER = actual_chapter; 
 
     if (req.body.request.type === 'LaunchRequest') 
     {
