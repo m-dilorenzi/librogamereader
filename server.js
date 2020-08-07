@@ -53,7 +53,7 @@ function log() {
     }
 }
 
-app.post('/', requestVerifier, function(req, res) {
+app.post('/', requestVerifier, async function(req, res) {
 
     var id_request = req.body.session.user.userId;
     console.log('Richiesta da utente: '+id_request);
