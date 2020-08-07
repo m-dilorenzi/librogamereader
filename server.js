@@ -102,7 +102,7 @@ function stopAndExit()
 }
 
 
-function getNewChapter(chapter, id_request) 
+async function getNewChapter(chapter, id_request) 
 {
     const allChapters = convertToJson();
     console.log('Try to get chapter...'+chapter);
