@@ -80,7 +80,7 @@ app.post('/', requestVerifier, async function(req, res) {
             case 'getNextChapterIntent':
                 console.log('Get new chapter...');
                 var chapter = req.body.request.intent.slots.capitolo.value;
-                res.json(getNewChapter(chapter));
+                res.json(getNewChapter(chapter, id_request));
                 break;
             case 'readAgainIntent':
                 console.log('Read again last chapter...');
@@ -102,7 +102,7 @@ function stopAndExit()
 }
 
 
-function getNewChapter(chapter) 
+function getNewChapter(chapter, id_request) 
 {
     const allChapters = convertToJson();
     console.log('Try to get chapter...'+chapter);
@@ -123,6 +123,7 @@ function getNewChapter(chapter)
                     if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
                     {
                         process.env.ACTUAL_CHAPTER = chapter;
+                        var result = database_connection.updateActualChapter(id_request, chapter);
                         var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
                         const speechOutput = WHISPER + chapterToRead + PAUSE;
                         return buildResponseWithRepromt(speechOutput, false, '', '');
