@@ -123,7 +123,7 @@ function getNewChapter(chapter, id_request)
                     if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
                     {
                         process.env.ACTUAL_CHAPTER = chapter;
-                        var result = database_connection.updateActualChapter(id_request, chapter);
+                        var result = await database_connection.updateActualChapter(id_request, chapter);
                         var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
                         const speechOutput = WHISPER + chapterToRead + PAUSE;
                         return buildResponseWithRepromt(speechOutput, false, '', '');
