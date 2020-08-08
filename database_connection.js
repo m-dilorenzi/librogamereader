@@ -13,16 +13,5 @@ async function getActualChapter(user_id) {
     } catch (error) {console.log(error);}
 }
 
-/*
-async function updateActualChapter(user_id, chapter) {
-    var queryString = 'UPDATE lastvisitedchapter SET actual_chapter = '+chapter+' WHERE user_id=\''+user_id+'\';';
-
-    try {
-        var result = await pool.query(queryString);
-        return result;
-    } catch (error) {console.log(error);}
-}
-*/
-
 exports.getActualChapter    = getActualChapter;
 exports.pool                = pool;
