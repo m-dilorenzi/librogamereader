@@ -88,8 +88,8 @@ app.post('/', requestVerifier, async function(req, res) {
                 break;
             
             case 'restartBookIntent':
-                console.log('Get new chapter...');
-                res.json(getNewChapter(1, id_request));
+                console.log('Restart book...');
+                res.json(restartBook(1, id_request));
                 break;
 
             default:
@@ -131,13 +131,13 @@ function getNewChapter(chapter, id_request)
                         var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
                         if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_death == true)
                         { 
-                            chapterToRead += 'Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
+                            chapterToRead += ' Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
                             tuo percorso e scegli una strada diversa pronunciando ricomincia dall\'inizio!';
                             updateActualChapter(id_request, 0);
                         }
                         if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_final == true)
                         { 
-                            chapterToRead += 'Complimenti! Sei uscito vittorioso dalla tua avventura! Pronuncia stop per uscire dalla skill\
+                            chapterToRead += ' Complimenti! Sei uscito vittorioso dalla tua avventura! Pronuncia stop per uscire dalla skill\
                             oppure prununcia ricomincia dal\'inizio per ricominciare la tua avventura percorrendo una strada diversa!';
                             updateActualChapter(id_request, 0);
                         }
@@ -162,13 +162,13 @@ function getNewChapter(chapter, id_request)
                     const speechOutput = WHISPER + chapterToRead + PAUSE;
                     if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_death == true)
                     { 
-                        chapterToRead += 'Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
+                        chapterToRead += ' Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
                         tuo percorso e scegli una strada diversa pronunciando ricomincia dall\'inizio!';
                         updateActualChapter(id_request, 0);
                     }
                     if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_final == true)
                     { 
-                        chapterToRead += 'Complimenti! Sei uscito vittorioso dalla tua avventura! Pronuncia stop per uscire dalla skill\
+                        chapterToRead += ' Complimenti! Sei uscito vittorioso dalla tua avventura! Pronuncia stop per uscire dalla skill\
                         oppure prununcia ricomincia dal\'inizio per ricominciare la tua avventura percorrendo una strada diversa!';
                         updateActualChapter(id_request, 0);
                     }
@@ -200,6 +200,17 @@ function getNewChapter(chapter, id_request)
             return buildResponseWithRepromt(speechOutput, false, '', '');
         }
     }
+}
+
+function restartBook(chapter, id_request)
+{
+    const allChapters = convertToJson();
+    console.log('Try to get chapter...'+chapter);
+    process.env.ACTUAL_CHAPTER = chapter;
+    updateActualChapter(id_request, chapter);
+    var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
+    const speechOutput = WHISPER + chapterToRead + PAUSE;
+    return buildResponseWithRepromt(speechOutput, false, '', '');
 }
 
 function readAgainChapter(chapter)
