@@ -123,13 +123,7 @@ function getNewChapter(chapter, id_request)
                     if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
                     {
                         process.env.ACTUAL_CHAPTER = chapter;
-                        var queryString = 'UPDATE lastvisitedchapter SET actual_chapter = '+chapter+' WHERE user_id=\''+user_id+'\';';
-                        database_connection.pool.query(queryString, function(error) {
-                            if (error) {
-                                console.log(error);
-                                response.status(400).send(error);
-                            }
-                        });
+                        updateActualChapter(id_request, chapter);
                         var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
                         const speechOutput = WHISPER + chapterToRead + PAUSE;
                         return buildResponseWithRepromt(speechOutput, false, '', '');
@@ -147,13 +141,7 @@ function getNewChapter(chapter, id_request)
                 if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter)
                 {
                     process.env.ACTUAL_CHAPTER = chapter;
-                    var queryString = 'UPDATE lastvisitedchapter SET actual_chapter = '+chapter+' WHERE user_id=\''+user_id+'\';';
-                    database_connection.pool.query(queryString, function(error) {
-                            if (error) {
-                                console.log(error);
-                                response.status(400).send(error);
-                            }
-                    });
+                    updateActualChapter(id_request, chapter);
                     var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
                     const speechOutput = WHISPER + chapterToRead + PAUSE;
                     return buildResponseWithRepromt(speechOutput, false, '', '');
@@ -173,6 +161,7 @@ function getNewChapter(chapter, id_request)
         if(chapter == 1)
         {
             process.env.ACTUAL_CHAPTER = chapter;
+            updateActualChapter(id_request, chapter);
             var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
             const speechOutput = WHISPER + chapterToRead + PAUSE;
             return buildResponseWithRepromt(speechOutput, false, '', '');   
@@ -264,4 +253,15 @@ function convertToJson()
 {
     const xmlData = fs.readFileSync(fileNamePath).toString();
     return parser.parse(xmlData);
+}
+
+function updateActualChapter(user_id, chapter)
+{
+    var queryString = 'UPDATE lastvisitedchapter SET actual_chapter = '+chapter+' WHERE user_id=\''+user_id+'\';';
+    database_connection.pool.query(queryString, function(error) {
+        if (error) {
+            console.log(error);
+            response.status(400).send(error);
+        }
+    });
 }
