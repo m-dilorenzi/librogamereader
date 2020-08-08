@@ -147,6 +147,13 @@ function getNewChapter(chapter, id_request)
                 if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter)
                 {
                     process.env.ACTUAL_CHAPTER = chapter;
+                    var queryString = 'UPDATE lastvisitedchapter SET actual_chapter = '+chapter+' WHERE user_id=\''+user_id+'\';';
+                    database_connection.pool.query(queryString, function(error) {
+                            if (error) {
+                                console.log(error);
+                                response.status(400).send(error);
+                            }
+                    });
                     var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
                     const speechOutput = WHISPER + chapterToRead + PAUSE;
                     return buildResponseWithRepromt(speechOutput, false, '', '');
