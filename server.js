@@ -125,6 +125,12 @@ function getNewChapter(chapter, id_request)
                         process.env.ACTUAL_CHAPTER = chapter;
                         updateActualChapter(id_request, chapter);
                         var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
+                        if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_death == true)
+                        { 
+                            chapterToRead += 'Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
+                            tuo percorso e scegli una strada diversa!';
+                            updateActualChapter(id_request, 0);
+                        }
                         const speechOutput = WHISPER + chapterToRead + PAUSE;
                         return buildResponseWithRepromt(speechOutput, false, '', '');
                     }
@@ -144,6 +150,12 @@ function getNewChapter(chapter, id_request)
                     updateActualChapter(id_request, chapter);
                     var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
                     const speechOutput = WHISPER + chapterToRead + PAUSE;
+                    if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_death == true)
+                    { 
+                        chapterToRead += 'Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
+                        tuo percorso e scegli una strada diversa!';
+                        updateActualChapter(id_request, 0);
+                    }
                     return buildResponseWithRepromt(speechOutput, false, '', '');
                 }
                 var speechOutput = 'Puoi proseguire solamente andando ai capitoli: '+allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter;
