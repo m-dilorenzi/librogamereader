@@ -135,6 +135,12 @@ function getNewChapter(chapter, id_request)
                             tuo percorso e scegli una strada diversa pronunciando ricomincia dall\'inizio!';
                             updateActualChapter(id_request, 0);
                         }
+                        if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_final == true)
+                        { 
+                            chapterToRead += 'Complimenti! Sei uscito vittorioso dalla tua avventura! Pronuncia stop per uscire dalla skill\
+                            oppure prununcia ricomincia dal\'inizio per ricominciare la tua avventura percorrendo una strada diversa!';
+                            updateActualChapter(id_request, 0);
+                        }
                         const speechOutput = WHISPER + chapterToRead + PAUSE;
                         return buildResponseWithRepromt(speechOutput, false, '', '');
                     }
@@ -160,9 +166,15 @@ function getNewChapter(chapter, id_request)
                         tuo percorso e scegli una strada diversa pronunciando ricomincia dall\'inizio!';
                         updateActualChapter(id_request, 0);
                     }
+                    if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_final == true)
+                    { 
+                        chapterToRead += 'Complimenti! Sei uscito vittorioso dalla tua avventura! Pronuncia stop per uscire dalla skill\
+                        oppure prununcia ricomincia dal\'inizio per ricominciare la tua avventura percorrendo una strada diversa!';
+                        updateActualChapter(id_request, 0);
+                    }
                     return buildResponseWithRepromt(speechOutput, false, '', '');
                 }
-                var speechOutput = 'Puoi proseguire solamente andando ai capitoli: '+allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter;
+                var speechOutput = 'Puoi proseguire solamente andando al capitolo: '+allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter;
                 return buildResponseWithRepromt(speechOutput, false, '', '');
             }
         }
