@@ -87,6 +87,10 @@ app.post('/', requestVerifier, async function(req, res) {
                 res.json(readAgainChapter(process.env.ACTUAL_CHAPTER));
                 break;
             
+            case 'restartBookIntent':
+                console.log('Get new chapter...');
+                res.json(getNewChapter(1, id_request));
+                break;
 
             default:
         }
@@ -128,7 +132,7 @@ function getNewChapter(chapter, id_request)
                         if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_death == true)
                         { 
                             chapterToRead += 'Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
-                            tuo percorso e scegli una strada diversa!';
+                            tuo percorso e scegli una strada diversa pronunciando ricomincia dall\'inizio!';
                             updateActualChapter(id_request, 0);
                         }
                         const speechOutput = WHISPER + chapterToRead + PAUSE;
@@ -153,7 +157,7 @@ function getNewChapter(chapter, id_request)
                     if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_death == true)
                     { 
                         chapterToRead += 'Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
-                        tuo percorso e scegli una strada diversa!';
+                        tuo percorso e scegli una strada diversa pronunciando ricomincia dall\'inizio!';
                         updateActualChapter(id_request, 0);
                     }
                     return buildResponseWithRepromt(speechOutput, false, '', '');
