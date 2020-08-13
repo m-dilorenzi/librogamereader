@@ -127,7 +127,7 @@ function stopAndExit()
 
 function getRandomNumber(numInf, numSup)
 {
-    var number = Math.floor(Math.random() * (numSup - numInf + 1) + numInf);
+    var number = Math.floor(Math.random() * (numSup - numInf + 1)) + numInf;
     const speechOutput = WHISPER + 'Il tuo numero casuale tra ' + numInf + ' e ' + numSup + ' è ' + number + PAUSE;
     return buildResponseWithRepromt(speechOutput, false, '', '');
 }
