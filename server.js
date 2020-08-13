@@ -102,8 +102,9 @@ app.post('/', requestVerifier, async function(req, res) {
 
             case 'getRandomNumberIntent':
                 console.log('Get random number...');
-                console.log(req);
-                // res.json(readAgainChapter(process.env.ACTUAL_CHAPTER));
+                var numInf = req.body.request.intent.slots.numInf.value;
+                var numSup = req.body.request.intent.slots.numSup.value;
+                res.json(getRandomNumber(numInf, numSup));
                 break;
             
             case 'restartBookIntent':
@@ -124,6 +125,12 @@ function stopAndExit()
     return jsonObj;
 }
 
+function getRandomNumber(numInf, numSup)
+{
+    var number = Math.floor(Math.random() * (numSup - numInf + 1) + numInf);
+    const speechOutput = WHISPER + 'Il tuo numero casuale tra ' + numInf + ' e ' + numSup + ' è ' + number + PAUSE;
+    return buildResponseWithRepromt(speechOutput, false, '', '');
+}
 
 function getNewChapter(chapter, id_request) 
 {
