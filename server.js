@@ -57,9 +57,10 @@ app.post('/', requestVerifier, async function(req, res) {
 
     var id_request = req.body.session.user.userId;
     console.log('Richiesta da utente: '+id_request);
-    var actual_chapter = await database_connection.getActualChapter(id_request)
-    console.log('Ultimo capitolo letto: ' + actual_chapter);
-
+    var actual_chapter  = await database_connection.getActualChapter(id_request);
+    var last_chapter    = await database_connection.getLastChapter(id_request);
+    console.log('Penultimo capitolo letto: ' + actual_chapter);    
+    console.log('Ultimo capitolo letto:    ' + actual_chapter);
     process.env.ACTUAL_CHAPTER = actual_chapter; 
 
     if (req.body.request.type === 'LaunchRequest') 
@@ -82,9 +83,26 @@ app.post('/', requestVerifier, async function(req, res) {
                 var chapter = req.body.request.intent.slots.capitolo.value;
                 res.json(getNewChapter(chapter, id_request));
                 break;
+            
+            case 'getLastChapterIntent':
+                if(process.env.ACTUAL_CHAPTER == 0 || process.env.ACTUAL_CHAPTER == 1)
+                {
+                    var speechOutput = 'Non puoi tornare al capitolo precedente!';
+                    res.json(buildResponseWithRepromt(speechOutput, false, '', ''));
+                }
+                else{
+                    res.json(getLastChapter(id_request));
+                }
+                break;
+            
             case 'readAgainIntent':
                 console.log('Read again last chapter...');
                 res.json(readAgainChapter(process.env.ACTUAL_CHAPTER));
+                break;
+
+            case 'getRandomNumberIntent':
+                console.log('Get random number...');
+                // res.json(readAgainChapter(process.env.ACTUAL_CHAPTER));
                 break;
             
             case 'restartBookIntent':
@@ -126,6 +144,7 @@ function getNewChapter(chapter, id_request)
                 {
                     if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
                     {
+                        updateLastChapter(id_request, process.env.ACTUAL_CHAPTER);
                         process.env.ACTUAL_CHAPTER = chapter;
                         updateActualChapter(id_request, chapter);
                         var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
@@ -156,6 +175,7 @@ function getNewChapter(chapter, id_request)
             {
                 if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter)
                 {
+                    updateLastChapter(id_request, process.env.ACTUAL_CHAPTER);
                     process.env.ACTUAL_CHAPTER = chapter;
                     updateActualChapter(id_request, chapter);
                     var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
@@ -188,6 +208,7 @@ function getNewChapter(chapter, id_request)
     {
         if(chapter == 1)
         {
+            updateLastChapter(id_request, 0);
             process.env.ACTUAL_CHAPTER = chapter;
             updateActualChapter(id_request, chapter);
             var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
@@ -202,10 +223,19 @@ function getNewChapter(chapter, id_request)
     }
 }
 
+async function getLastChapter(id_request)
+{
+    const allChapters = convertToJson();
+    process.env.ACTUAL_CHAPTER = await database_connection.getLastChapter(id_request);
+    updateActualChapter(id_request, process.env.ACTUAL_CHAPTER);
+    var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
+    const speechOutput = WHISPER + chapterToRead + PAUSE;
+    return buildResponseWithRepromt(speechOutput, false, '', '');
+}
+
 function restartBook(chapter, id_request)
 {
     const allChapters = convertToJson();
-    console.log('Try to get chapter...'+chapter);
     process.env.ACTUAL_CHAPTER = chapter;
     updateActualChapter(id_request, chapter);
     var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
@@ -297,6 +327,17 @@ function convertToJson()
 function updateActualChapter(user_id, chapter)
 {
     var queryString = 'UPDATE lastvisitedchapter SET actual_chapter = '+chapter+' WHERE user_id=\''+user_id+'\';';
+    database_connection.pool.query(queryString, function(error) {
+        if (error) {
+            console.log(error);
+            response.status(400).send(error);
+        }
+    });
+}
+
+function updateLastChapter(user_id, chapter)
+{
+    var queryString = 'UPDATE lastvisitedchapter SET last_chapter = '+chapter+' WHERE user_id=\''+user_id+'\';';
     database_connection.pool.query(queryString, function(error) {
         if (error) {
             console.log(error);

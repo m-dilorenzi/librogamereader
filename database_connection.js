@@ -13,5 +13,15 @@ async function getActualChapter(user_id) {
     } catch (error) {console.log(error);}
 }
 
+async function getLastChapter(user_id) {
+    var queryString = 'SELECT last_chapter FROM lastvisitedchapter WHERE user_id=\''+user_id+'\';';
+
+    try {
+        var result = await pool.query(queryString);
+        return(result.rows[0].actual_chapter);
+    } catch (error) {console.log(error);}
+}
+
 exports.getActualChapter    = getActualChapter;
+exports.getLastChapter      = getLastChapter;
 exports.pool                = pool;
