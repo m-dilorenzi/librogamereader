@@ -102,6 +102,7 @@ app.post('/', requestVerifier, async function(req, res) {
 
             case 'getRandomNumberIntent':
                 console.log('Get random number...');
+                console.log(req);
                 // res.json(readAgainChapter(process.env.ACTUAL_CHAPTER));
                 break;
             
