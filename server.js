@@ -133,104 +133,6 @@ function getRandomNumber(numInf, numSup)
     return buildResponseWithRepromt(speechOutput, false, '', '');
 }
 
-function getNewChapter(chapter, id_request) 
-{
-    const allChapters = convertToJson();
-    console.log('Try to get chapter...'+chapter);
-    
-    if(process.env.ACTUAL_CHAPTER != 0)
-    { 
-        if((chapter != process.env.ACTUAL_CHAPTER))
-        {
-            if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length == undefined)
-                var length = 1;
-            else
-                var length = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length;
-
-            if(length != 1)
-            {
-                for(var i = 0; i < length; i++)
-                {
-                    if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
-                    {
-                        updateLastChapter(id_request, process.env.ACTUAL_CHAPTER);
-                        process.env.ACTUAL_CHAPTER = chapter;
-                        updateActualChapter(id_request, chapter);
-                        var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
-                        if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_death == true)
-                        { 
-                            chapterToRead += ' Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
-                            tuo percorso e scegli una strada diversa pronunciando ricomincia dall\'inizio!';
-                            updateActualChapter(id_request, 0);
-                        }
-                        if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_final == true)
-                        { 
-                            chapterToRead += ' Complimenti! Sei uscito vittorioso dalla tua avventura! Pronuncia stop per uscire dalla skill\
-                            oppure prununcia ricomincia dal\'inizio per ricominciare la tua avventura percorrendo una strada diversa!';
-                            updateActualChapter(id_request, 0);
-                        }
-                        const speechOutput = WHISPER + chapterToRead + PAUSE;
-                        return buildResponseWithRepromt(speechOutput, false, '', '');
-                    }
-                }
-                var speechOutput = 'Puoi proseguire solamente andando ai capitoli: ';
-                for(var i = 0; i < length; i++)
-                {
-                    speechOutput += allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i]+ ' ';
-                }
-                return buildResponseWithRepromt(speechOutput, false, '', '');
-            }
-            else
-            {
-                if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter)
-                {
-                    updateLastChapter(id_request, process.env.ACTUAL_CHAPTER);
-                    process.env.ACTUAL_CHAPTER = chapter;
-                    updateActualChapter(id_request, chapter);
-                    var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
-                    const speechOutput = WHISPER + chapterToRead + PAUSE;
-                    if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_death == true)
-                    { 
-                        chapterToRead += ' Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
-                        tuo percorso e scegli una strada diversa pronunciando ricomincia dall\'inizio!';
-                        updateActualChapter(id_request, 0);
-                    }
-                    if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_final == true)
-                    { 
-                        chapterToRead += ' Complimenti! Sei uscito vittorioso dalla tua avventura! Pronuncia stop per uscire dalla skill\
-                        oppure prununcia ricomincia dal\'inizio per ricominciare la tua avventura percorrendo una strada diversa!';
-                        updateActualChapter(id_request, 0);
-                    }
-                    return buildResponseWithRepromt(speechOutput, false, '', '');
-                }
-                var speechOutput = 'Puoi proseguire solamente andando al capitolo: '+allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter;
-                return buildResponseWithRepromt(speechOutput, false, '', '');
-            }
-        }
-        else
-        {  
-            const speechOutput = 'Ti trovi già al capitolo '+chapter;
-            return buildResponseWithRepromt(speechOutput, false, '', '');            
-        }
-    }
-    else
-    {
-        if(chapter == 1)
-        {
-            updateLastChapter(id_request, 0);
-            process.env.ACTUAL_CHAPTER = chapter;
-            updateActualChapter(id_request, chapter);
-            var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
-            const speechOutput = WHISPER + chapterToRead + PAUSE;
-            return buildResponseWithRepromt(speechOutput, false, '', '');   
-        }
-        else
-        {
-            const speechOutput = WHISPER + 'devi iniziare la lettura dal capitolo 1' + PAUSE;
-            return buildResponseWithRepromt(speechOutput, false, '', '');
-        }
-    }
-}
 
 async function getLastChapter(id_request)
 {
@@ -353,4 +255,107 @@ function updateLastChapter(user_id, chapter)
             response.status(400).send(error);
         }
     });
+}
+
+function getNewChapter(chapter, id_request) 
+{
+    const allChapters = convertToJson();
+    console.log('Try to get chapter...'+chapter);
+    
+    if(process.env.ACTUAL_CHAPTER != 0)
+    { 
+        if((chapter != process.env.ACTUAL_CHAPTER))
+        {
+            if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length == undefined)
+                var length = 1;
+            else
+                var length = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length;
+
+            if(length != 1)
+            {
+                for(var i = 0; i < length; i++)
+                {
+                    if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
+                    {
+                        updateLastChapter(id_request, process.env.ACTUAL_CHAPTER);
+                        process.env.ACTUAL_CHAPTER = chapter;
+                        updateActualChapter(id_request, chapter);
+                        var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
+                        if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_death == true)
+                        { 
+                            chapterToRead += ' Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
+                            tuo percorso e scegli una strada diversa pronunciando ricomincia dall\'inizio!';
+                            updateActualChapter(id_request, 0);
+                            updateLastChapter(id_request, 0);
+                        }
+                        if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_final == true)
+                        { 
+                            chapterToRead += ' Complimenti! Sei uscito vittorioso dalla tua avventura! Pronuncia stop per uscire dalla skill\
+                            oppure prununcia ricomincia dal\'inizio per ricominciare la tua avventura percorrendo una strada diversa!';
+                            updateActualChapter(id_request, 0);
+                            updateLastChapter(id_request, 0);
+                        }
+                        const speechOutput = WHISPER + chapterToRead + PAUSE;
+                        return buildResponseWithRepromt(speechOutput, false, '', '');
+                    }
+                }
+                var speechOutput = 'Puoi proseguire solamente andando ai capitoli: ';
+                for(var i = 0; i < length; i++)
+                {
+                    speechOutput += allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i]+ ' ';
+                }
+                return buildResponseWithRepromt(speechOutput, false, '', '');
+            }
+            else
+            {
+                if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter)
+                {
+                    updateLastChapter(id_request, process.env.ACTUAL_CHAPTER);
+                    process.env.ACTUAL_CHAPTER = chapter;
+                    updateActualChapter(id_request, chapter);
+                    var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
+                    const speechOutput = WHISPER + chapterToRead + PAUSE;
+                    if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_death == true)
+                    { 
+                        chapterToRead += ' Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
+                        tuo percorso e scegli una strada diversa pronunciando ricomincia dall\'inizio!';
+                        updateActualChapter(id_request, 0);
+                        updateLastChapter(id_request, 0);
+                    }
+                    if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_final == true)
+                    { 
+                        chapterToRead += ' Complimenti! Sei uscito vittorioso dalla tua avventura! Pronuncia stop per uscire dalla skill\
+                        oppure prununcia ricomincia dal\'inizio per ricominciare la tua avventura percorrendo una strada diversa!';
+                        updateActualChapter(id_request, 0);
+                        updateLastChapter(id_request, 0);
+                    }
+                    return buildResponseWithRepromt(speechOutput, false, '', '');
+                }
+                var speechOutput = 'Puoi proseguire solamente andando al capitolo: '+allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter;
+                return buildResponseWithRepromt(speechOutput, false, '', '');
+            }
+        }
+        else
+        {  
+            const speechOutput = 'Ti trovi già al capitolo '+chapter;
+            return buildResponseWithRepromt(speechOutput, false, '', '');            
+        }
+    }
+    else
+    {
+        if(chapter == 1)
+        {
+            updateLastChapter(id_request, 0);
+            process.env.ACTUAL_CHAPTER = chapter;
+            updateActualChapter(id_request, chapter);
+            var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
+            const speechOutput = WHISPER + chapterToRead + PAUSE;
+            return buildResponseWithRepromt(speechOutput, false, '', '');   
+        }
+        else
+        {
+            const speechOutput = WHISPER + 'devi iniziare la lettura dal capitolo 1' + PAUSE;
+            return buildResponseWithRepromt(speechOutput, false, '', '');
+        }
+    }
 }
