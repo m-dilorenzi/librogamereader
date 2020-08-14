@@ -59,8 +59,7 @@ app.post('/', requestVerifier, async function(req, res) {
     console.log('Richiesta da utente: '+id_request);
 
     var allUsers        = await database_connection.getAllUsers();
-    console.log(allUsers);
-
+    await checkUsers(allUsers, id_request);
 
     var actual_chapter  = await database_connection.getActualChapter(id_request);
     var last_chapter    = await database_connection.getLastChapter(id_request);
@@ -122,6 +121,36 @@ app.post('/', requestVerifier, async function(req, res) {
     }
 });
 
+async function checkUsers(allUsers, id_request)
+{
+    var i;
+    var exists = 0;
+    for(var i = 0; i < allUsers.length; i++)
+    {
+        if(allUsers[i] == id_request)
+        {
+            console.log('User already connected...');
+            exists = 1;
+        }
+    }
+    if(exists == 0)
+        await addUser(id_request);
+}
+
+async function addUser(id_request)
+{
+    console.log('Add new user...');
+    var queryString = 'INSERT INTO lastvisitedchapter VALUES (\''+id_request+'\', 0, 0);';
+    database_connection.pool.query(queryString, function(error) {
+        if (error) {
+            console.log(error);
+            response.status(400).send(error);
+        }
+        else{
+            return true;
+        }
+    });
+}
 
 function stopAndExit() 
 {
