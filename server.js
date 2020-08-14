@@ -83,6 +83,11 @@ app.post('/', requestVerifier, async function(req, res) {
                 res.json(stopAndExit());
                 break;
             
+            case 'exitIntent':
+                console.log('Exit from the skill...')
+                res.json(stopAndExit());
+            break;
+
             case 'getNextChapterIntent':
                 console.log('Get new chapter...');
                 var chapter = req.body.request.intent.slots.capitolo.value;
