@@ -127,6 +127,7 @@ async function checkUsers(allUsers, id_request)
     var exists = 0;
     for(var i = 0; i < allUsers.length; i++)
     {
+        console.log('\n'+allUsers[i]+'\n')
         if(allUsers[i] == id_request)
         {
             console.log('User already connected...');
