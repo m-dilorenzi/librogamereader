@@ -123,7 +123,7 @@ app.post('/', requestVerifier, async function(req, res) {
 
 async function checkUsers(allUsers, id_request)
 {
-    console.log(allChapters);
+    console.log(allUsers);
     var i;
     var exists = 0;
     for(var i = 0; i < allUsers.length; i++)
