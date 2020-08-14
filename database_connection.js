@@ -22,7 +22,7 @@ async function getLastChapter(user_id) {
     } catch (error) {console.log(error);}
 }
 
-async function getLastChapter() {
+async function getAllUsers() {
     var queryString = 'SELECT user_id FROM lastvisitedchapter';
 
     try {
