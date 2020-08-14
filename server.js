@@ -123,12 +123,11 @@ app.post('/', requestVerifier, async function(req, res) {
 
 function checkUsers(allUsers, id_request)
 {
-    console.log(allUsers);
     var i;
     var exists = 0;
     for(var i = 0; i < allUsers.length; i++)
     {
-        if(allUsers[i] == id_request)
+        if(allUsers[i].user_id == id_request)
         {
             console.log('User already connected...');
             exists = 1;
