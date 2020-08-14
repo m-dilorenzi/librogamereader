@@ -59,7 +59,7 @@ app.post('/', requestVerifier, async function(req, res) {
     console.log('Richiesta da utente: '+id_request);
     var actual_chapter  = await database_connection.getActualChapter(id_request);
     var last_chapter    = await database_connection.getLastChapter(id_request);
-    console.log('Penultimo capitolo letto: ' + actual_chapter);    
+    console.log('Penultimo capitolo letto: ' + last_chapter);    
     console.log('Ultimo capitolo letto:    ' + actual_chapter);
     process.env.ACTUAL_CHAPTER = actual_chapter; 
 
@@ -91,7 +91,7 @@ app.post('/', requestVerifier, async function(req, res) {
                     res.json(buildResponseWithRepromt(speechOutput, false, '', ''));
                 }
                 else{
-                    res.json(getLastChapter(id_request));
+                    res.json(getLastChapter(last_chapter, id_request));
                 }
                 break;
             
@@ -134,10 +134,10 @@ function getRandomNumber(numInf, numSup)
 }
 
 
-async function getLastChapter(id_request)
+function getLastChapter(chapter, id_request)
 {
     const allChapters = convertToJson();
-    process.env.ACTUAL_CHAPTER = await database_connection.getLastChapter(id_request);
+    process.env.ACTUAL_CHAPTER = chapter;
     updateActualChapter(id_request, process.env.ACTUAL_CHAPTER);
     var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
     const speechOutput = WHISPER + chapterToRead + PAUSE;
