@@ -57,6 +57,11 @@ app.post('/', requestVerifier, async function(req, res) {
 
     var id_request = req.body.session.user.userId;
     console.log('Richiesta da utente: '+id_request);
+
+    var allUsers        = await database_connection.getAllUsers();
+    console.log(allUsers);
+
+
     var actual_chapter  = await database_connection.getActualChapter(id_request);
     var last_chapter    = await database_connection.getLastChapter(id_request);
     console.log('Penultimo capitolo letto: ' + last_chapter);    
