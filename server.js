@@ -123,11 +123,12 @@ app.post('/', requestVerifier, async function(req, res) {
 
 async function checkUsers(allUsers, id_request)
 {
+    console.log(allChapters);
     var i;
     var exists = 0;
     for(var i = 0; i < allUsers.length; i++)
     {
-        console.log('\n'+allUsers[i]+'\n')
+        // console.log('\n'+allUsers[i]+'\n')
         if(allUsers[i] == id_request)
         {
             console.log('User already connected...');
