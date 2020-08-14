@@ -18,7 +18,7 @@ async function getLastChapter(user_id) {
 
     try {
         var result = await pool.query(queryString);
-        return(result.rows[0].actual_chapter);
+        return(result.rows[0].last_chapter);
     } catch (error) {console.log(error);}
 }
 
