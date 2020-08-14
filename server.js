@@ -59,7 +59,7 @@ app.post('/', requestVerifier, async function(req, res) {
     console.log('Richiesta da utente: '+id_request);
 
     var allUsers        = await database_connection.getAllUsers();
-    await checkUsers(allUsers, id_request);
+    checkUsers(allUsers, id_request);
 
     var actual_chapter  = await database_connection.getActualChapter(id_request);
     var last_chapter    = await database_connection.getLastChapter(id_request);
@@ -121,14 +121,13 @@ app.post('/', requestVerifier, async function(req, res) {
     }
 });
 
-async function checkUsers(allUsers, id_request)
+function checkUsers(allUsers, id_request)
 {
     console.log(allUsers);
     var i;
     var exists = 0;
     for(var i = 0; i < allUsers.length; i++)
     {
-        // console.log('\n'+allUsers[i]+'\n')
         if(allUsers[i] == id_request)
         {
             console.log('User already connected...');
@@ -136,10 +135,10 @@ async function checkUsers(allUsers, id_request)
         }
     }
     if(exists == 0)
-        await addUser(id_request);
+        addUser(id_request);
 }
 
-async function addUser(id_request)
+function addUser(id_request)
 {
     console.log('Add new user...');
     var queryString = 'INSERT INTO lastvisitedchapter VALUES (\''+id_request+'\', 0, 0);';
@@ -147,9 +146,6 @@ async function addUser(id_request)
         if (error) {
             console.log(error);
             response.status(400).send(error);
-        }
-        else{
-            return true;
         }
     });
 }
