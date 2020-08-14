@@ -59,10 +59,16 @@ app.post('/', requestVerifier, async function(req, res) {
     console.log('Richiesta da utente: '+id_request);
 
     var allUsers        = await database_connection.getAllUsers();
-    checkUsers(allUsers, id_request);
+    if(checkUsers(allUsers, id_request) == true)
+    {
+        var actual_chapter  = await database_connection.getActualChapter(id_request);
+        var last_chapter    = await database_connection.getLastChapter(id_request);
+    }else{
+        var actual_chapter  = 0;
+        var last_chapter    = 0;
+    }
 
-    var actual_chapter  = await database_connection.getActualChapter(id_request);
-    var last_chapter    = await database_connection.getLastChapter(id_request);
+    
     console.log('Penultimo capitolo letto: ' + last_chapter);    
     console.log('Ultimo capitolo letto:    ' + actual_chapter);
     process.env.ACTUAL_CHAPTER = actual_chapter; 
@@ -134,7 +140,12 @@ function checkUsers(allUsers, id_request)
         }
     }
     if(exists == 0)
+    {
         addUser(id_request);
+        return false;
+    }else{
+        return true;
+    }
 }
 
 function addUser(id_request)
