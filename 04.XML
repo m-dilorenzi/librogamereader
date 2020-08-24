@@ -12,6 +12,7 @@ If you wish to ignore the hut and continue on your ride along the Ruanon Pike, t
 		<flag_fixed>true</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>160</nextChapter>
 			<nextChapter>273</nextChapter>
@@ -35,6 +36,7 @@ Turn to [200].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>200</nextChapter>
 		</nextChapters>
@@ -48,6 +50,7 @@ Turn to [62].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>62</nextChapter>
 		</nextChapters>
@@ -60,6 +63,7 @@ Turn to [40].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>40</nextChapter>
 		</nextChapters>
@@ -71,6 +75,7 @@ Turn to [40].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>186</nextChapter>
 		</nextChapters>
@@ -83,6 +88,7 @@ If you decide to ignore the wagon and ride south along the highway, turn to [175
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>80</nextChapter>
 			<nextChapter>175</nextChapter>
@@ -97,6 +103,7 @@ Turn to [154].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>154</nextChapter>
 		</nextChapters>
@@ -109,6 +116,7 @@ If you decide not to enter the tunnel, you can return to the rowing boat and con
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>151</nextChapter>
 			<nextChapter>240</nextChapter>
@@ -122,6 +130,7 @@ If you decide to leap clear of the swinging bridge into the unknown depth of the
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>112</nextChapter>
 			<nextChapter>342</nextChapter>
@@ -135,6 +144,7 @@ Leave the watchtower by turning to [59].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>59</nextChapter>
 		</nextChapters>
@@ -148,6 +158,7 @@ If the number is 5–9, turn to [190].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>97</nextChapter>
 			<nextChapter>190</nextChapter>
@@ -165,6 +176,7 @@ Before you set off on your perilous mission, Captain D'Val offers you the choice
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>140</nextChapter>
 		</nextChapters>
@@ -178,6 +190,7 @@ If the number is 5–9, turn to [25].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>171</nextChapter>
 			<nextChapter>25</nextChapter>
@@ -191,6 +204,7 @@ If you win the combat, turn to [146].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>31</nextChapter>
@@ -205,6 +219,7 @@ If you do not possess this skill, turn to [134].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>264</nextChapter>
 			<nextChapter>134</nextChapter>
@@ -218,6 +233,7 @@ If you wish to try to change direction as soon as the trees hide you from your p
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>123</nextChapter>
 			<nextChapter>169</nextChapter>
@@ -231,6 +247,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -241,6 +258,7 @@ Turn to [150].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>150</nextChapter>
 		</nextChapters>
@@ -253,18 +271,20 @@ Turn to [223].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>223</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 20>
 		<description>An arrow hisses overhead; a scream of agony fills the air. The bow slips from the archer's fingers as he sinks to his knees, the arrow lodged deep between his startled eyes. The clack of fangs and the soft swift pad of stealthy feet tell you that the Warhounds are closing in. You look up to see a man running towards you from the barricade. He has a shield in one hand and a longbow in the other; it is Guard Captain D'Val. He reaches you, breathless from his run, and draws an arrow from his quiver. D'Val aims and fires, drawing another arrow from his quiver as soon as the first is loosed. The Warhounds tumble and crash to the ground around you, felled by D'Val's deadly shafts. Eight lie dead before his quiver is empty.
-The captain grabs you by the arm and, swinging you over his shoulder in one swift motion, carries you back towards the barricade. Others run forward to help you, but the bandit archers are now in range and your men are forced back by a hail of arrows. The red shafts of the enemy whistle past on all sides. You reach the barricade, a wagon is pulled aside, and you are carried in through the gap. Captain D'Val is close to exhaustion; he staggers, and his men rush to catch him before he drops to the ground.
+The captain grabs you by the arm and, swinging you over his shoulder in one swift motion, carries you back towards fight barricade. Others run forward to help you, but the bandit archers are now in range and your men are forced back by a hail of arrows. The red shafts of the enemy whistle past on all sides. You reach the barricade, a wagon is pulled aside, and you are carried in through the gap. Captain D'Val is close to exhaustion; he staggers, and his men rush to catch him before he drops to the ground.
 Turn to [341].
 </description>
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>341</nextChapter>
 		</nextChapters>
@@ -278,6 +298,7 @@ If you wish to it west, turn to [191].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>264</nextChapter>
 			<nextChapter>134</nextChapter>
@@ -291,6 +312,7 @@ Continue along this tunnel and turn to [157].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>157</nextChapter>
 		</nextChapters>
@@ -303,6 +325,7 @@ If you do not, turn to [105].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>282</nextChapter>
 			<nextChapter>105</nextChapter>
@@ -317,6 +340,7 @@ If you wish to pick up the wounded archer's bow and man his position at the arro
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>238</nextChapter>
 			<nextChapter>223</nextChapter>
@@ -331,6 +355,7 @@ If you wish to avoid the temple and continue, turn to [141].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>290</nextChapter>
 			<nextChapter>141</nextChapter>
@@ -343,6 +368,7 @@ ENDURANCE 38 If you win the combat, turn to [321].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>321</nextChapter>
@@ -356,6 +382,7 @@ Turn to [200].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>200</nextChapter>
 		</nextChapters>
@@ -367,6 +394,7 @@ Turn to [348].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>348</nextChapter>
 		</nextChapters>
@@ -380,6 +408,7 @@ If you wish to leave the vault and attempt an entry via the guarded crypt door, 
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>168</nextChapter>
 			<nextChapter>246</nextChapter>
@@ -394,6 +423,7 @@ Turn to [176].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>176</nextChapter>
 		</nextChapters>
@@ -407,6 +437,7 @@ If the number you have picked is 5–9, turn to [329].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>272</nextChapter>
 			<nextChapter>329</nextChapter>
@@ -421,6 +452,7 @@ Turn to [309].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>309</nextChapter>
 		</nextChapters>
@@ -434,6 +466,7 @@ If you decide to go without food and sleep and press on to Ruanon as quickly as 
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>74</nextChapter>
 			<nextChapter>139</nextChapter>
@@ -449,6 +482,7 @@ If you wish to leave the vault and attempt to enter the temple via the guarded c
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>235</nextChapter>
 			<nextChapter>183</nextChapter>
@@ -463,6 +497,7 @@ If your total is now 8–12, turn to [231].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>147</nextChapter>
 			<nextChapter>231</nextChapter>
@@ -477,6 +512,7 @@ If the combat lasts longer than 3 rounds, turn to [277].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>155</nextChapter>
 			<nextChapter>277</nextChapter>
@@ -492,6 +528,7 @@ If you decide to press on to Ruanon, turn to [247].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>182</nextChapter>
@@ -508,6 +545,7 @@ If you wish to avoid the main highway and continue by the eastern track, turn to
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>297</nextChapter>
 			<nextChapter>15</nextChapter>
@@ -520,6 +558,7 @@ Turn to [148].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>148</nextChapter>
 		</nextChapters>
@@ -534,6 +573,7 @@ If you wish to climb the stairs to the balcony and explore the passage, turn to 
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>349</nextChapter>
 			<nextChapter>55</nextChapter>
@@ -547,6 +587,7 @@ Turn to [276].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>276</nextChapter>
 		</nextChapters>
@@ -558,6 +599,7 @@ Your mission and your life end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -570,6 +612,7 @@ If it is 7 or more, turn to [111].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>262</nextChapter>
 			<nextChapter>111</nextChapter>
@@ -583,6 +626,7 @@ If you do not possess this skill, turn to [188].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>149</nextChapter>
 			<nextChapter>188</nextChapter>
@@ -595,6 +639,7 @@ Turn to [307].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>307</nextChapter>
 		</nextChapters>
@@ -607,6 +652,7 @@ ENDURANCE 10 If you win this combat, turn to [281].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>281</nextChapter>
 		</nextChapters>
@@ -620,6 +666,7 @@ If you win the combat in five rounds or less, turn to [32].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>340</nextChapter>
 			<nextChapter>32</nextChapter>
@@ -632,6 +679,7 @@ Turn to [145].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>145</nextChapter>
 		</nextChapters>
@@ -644,6 +692,7 @@ Turn to [204].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>204</nextChapter>
 		</nextChapters>
@@ -657,6 +706,7 @@ If the number is 7–9, turn to [267].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>184</nextChapter>
 			<nextChapter>267</nextChapter>
@@ -671,6 +721,7 @@ If you would rather ignore the birds and press on, turn to [120].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>227</nextChapter>
 			<nextChapter>328</nextChapter>
@@ -684,6 +735,7 @@ Turn to [248].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>248</nextChapter>
 		</nextChapters>
@@ -697,6 +749,7 @@ If you win the combat, turn to [109].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>109</nextChapter>
 		</nextChapters>
@@ -710,6 +763,7 @@ Alternatively, if you wish, you may eat some of the fungi by turning to [201].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>4</nextChapter>
 			<nextChapter>65</nextChapter>
@@ -724,6 +778,7 @@ If you wish to hide in the shadows of the rough tunnel wall, turn to [286].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>161</nextChapter>
 			<nextChapter>286</nextChapter>
@@ -738,6 +793,7 @@ If you win but the fight lasts longer than 3 rounds, turn to [203].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>69</nextChapter>
 			<nextChapter>203</nextChapter>
@@ -760,6 +816,7 @@ If you do not possess this weapon, turn to [289].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>327</nextChapter>
 			<nextChapter>289</nextChapter>
@@ -773,6 +830,7 @@ If you decide to investigate the smaller coach, turn to [110].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>222</nextChapter>
 			<nextChapter>110</nextChapter>
@@ -788,6 +846,7 @@ If it is 5–9, turn to [260].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>193</nextChapter>
 			<nextChapter>260</nextChapter>
@@ -800,6 +859,7 @@ Turn to [199].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>199</nextChapter>
 		</nextChapters>
@@ -813,6 +873,7 @@ If you wish to grab the oars and row for the bank, turn to [189].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>304</nextChapter>
 			<nextChapter>136</nextChapter>
@@ -827,6 +888,7 @@ ENDURANCE 24 If you win, turn to [148].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>148</nextChapter>
 		</nextChapters>
@@ -841,6 +903,7 @@ If the number is 5–9, turn to [95].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>259</nextChapter>
 			<nextChapter>95</nextChapter>
@@ -854,6 +917,7 @@ If you wish to descend the stairs, turn to [228].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>170</nextChapter>
 			<nextChapter>228</nextChapter>
@@ -867,6 +931,7 @@ ENDURANCE 10 If you win the combat, turn to [298].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>298</nextChapter>
 		</nextChapters>
@@ -879,6 +944,7 @@ Turn to [124].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>124</nextChapter>
 		</nextChapters>
@@ -895,6 +961,7 @@ If it is 9–11, turn to [278].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>292</nextChapter>
@@ -911,6 +978,7 @@ If you wish to search the boathouse for other useful items, turn to [213].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>180</nextChapter>
 			<nextChapter>213</nextChapter>
@@ -925,6 +993,7 @@ If you wish to ignore the rope and escape into the tunnel, turn to [348].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>125</nextChapter>
 			<nextChapter>348</nextChapter>
@@ -940,6 +1009,7 @@ If you do not have this Special Item or this Discipline and Kai Rank, dive into 
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>305</nextChapter>
 			<nextChapter>49</nextChapter>
@@ -953,6 +1023,7 @@ Turn to [348].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>348</nextChapter>
 		</nextChapters>
@@ -966,6 +1037,7 @@ Turn to [211].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>211</nextChapter>
 		</nextChapters>
@@ -978,6 +1050,7 @@ If you do not possess this Item, turn to [325].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>283</nextChapter>
 			<nextChapter>325</nextChapter>
@@ -993,6 +1066,7 @@ If you wish to investigate the track leading into the hills, turn to [293].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>38</nextChapter>
 			<nextChapter>175</nextChapter>
@@ -1007,6 +1081,7 @@ If your total is now 0–5, turn to [192] If your total is now 6–12, turn to [
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>192</nextChapter>
 			<nextChapter>16</nextChapter>
@@ -1020,6 +1095,7 @@ If you wish to leave the chamber, turn to [64].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>268</nextChapter>
 			<nextChapter>64</nextChapter>
@@ -1034,6 +1110,7 @@ If you win, turn to [10].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>98</nextChapter>
 			<nextChapter>10</nextChapter>
@@ -1048,6 +1125,7 @@ Turn to [233].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>233</nextChapter>
 		</nextChapters>
@@ -1061,6 +1139,7 @@ Turn to [117].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>117</nextChapter>
 		</nextChapters>
@@ -1072,6 +1151,7 @@ Turn to [175].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>175</nextChapter>
 		</nextChapters>
@@ -1084,6 +1164,7 @@ If you decide to ignore the prop and press on along the tunnel, turn to [224].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>173</nextChapter>
 			<nextChapter>224</nextChapter>
@@ -1098,6 +1179,7 @@ If you wish to explore the hill track, turn to [15].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>337</nextChapter>
 			<nextChapter>297</nextChapter>
@@ -1111,6 +1193,7 @@ Turn to [199].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>199</nextChapter>
 		</nextChapters>
@@ -1132,6 +1215,7 @@ Turn to [273].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>273</nextChapter>
@@ -1144,6 +1228,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -1153,6 +1238,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>186</nextChapter>
 		</nextChapters>
@@ -1166,6 +1252,7 @@ If you wish to enter the right tunnel, turn to [208].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>60</nextChapter>
 			<nextChapter>199</nextChapter>
@@ -1180,6 +1267,7 @@ ENDURANCE 38 If you win the combat, turn to [321].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>321</nextChapter>
 		</nextChapters>
@@ -1192,6 +1280,7 @@ ENDURANCE 26 If you win, turn to [7].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>7</nextChapter>
 		</nextChapters>
@@ -1204,6 +1293,7 @@ ENDURANCE 24 If you win, turn to [249].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>249</nextChapter>
 		</nextChapters>
@@ -1216,6 +1306,7 @@ If you decide to call off the search, you can return to the surface, remount you
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>254</nextChapter>
 			<nextChapter>191</nextChapter>
@@ -1230,6 +1321,7 @@ If you decide to continue along the street, turn to [301].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>210</nextChapter>
 			<nextChapter>132</nextChapter>
@@ -1244,6 +1336,7 @@ ENDURANCE 26 If you win the combat, turn to [2].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>2</nextChapter>
 		</nextChapters>
@@ -1257,6 +1350,7 @@ Make the necessary adjustments to your Action Chart before turning to [219].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>219</nextChapter>
 		</nextChapters>
@@ -1268,6 +1362,7 @@ If you wish to show them your Badge of Rank, turn to [195].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>259</nextChapter>
 			<nextChapter>195</nextChapter>
@@ -1283,6 +1378,7 @@ If it is 9, turn to [334].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>47</nextChapter>
 			<nextChapter>234</nextChapter>
@@ -1296,6 +1392,7 @@ Turn to [199].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>199</nextChapter>
 		</nextChapters>
@@ -1307,6 +1404,7 @@ Turn to [59].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>59</nextChapter>
 		</nextChapters>
@@ -1318,6 +1416,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -1327,6 +1426,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>215</nextChapter>
@@ -1340,6 +1440,7 @@ If you wish to take the boat and continue south via the river, turn to [115].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>343</nextChapter>
 			<nextChapter>115</nextChapter>
@@ -1353,6 +1454,7 @@ If you do not have this skill, turn to [339].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>19</nextChapter>
 			<nextChapter>339</nextChapter>
@@ -1366,6 +1468,7 @@ Turn to [59].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>59</nextChapter>
 		</nextChapters>
@@ -1378,6 +1481,7 @@ If you wish to jump clear of the bridge and dive into the unknown depths of the 
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>303</nextChapter>
 			<nextChapter>342</nextChapter>
@@ -1391,6 +1495,7 @@ If you wish to raise your hands and surrender, turn to [267].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>285</nextChapter>
 			<nextChapter>267</nextChapter>
@@ -1404,6 +1509,7 @@ If you decide to investigate the stables, turn to [236].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>67</nextChapter>
 			<nextChapter>236</nextChapter>
@@ -1418,6 +1524,7 @@ If you wish to continue towards the watchtower, turn to [310].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>59</nextChapter>
 			<nextChapter>310</nextChapter>
@@ -1433,6 +1540,7 @@ If you win the fight, turn to [28].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>271</nextChapter>
 			<nextChapter>28</nextChapter>
@@ -1449,6 +1557,7 @@ If you wish to leave the hut, turn to [258].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>347</nextChapter>
 			<nextChapter>258</nextChapter>
@@ -1461,6 +1570,7 @@ Turn to [165].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>165</nextChapter>
 		</nextChapters>
@@ -1473,6 +1583,7 @@ If you wish to evade combat, turn to [163].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>90</nextChapter>
 			<nextChapter>163</nextChapter>
@@ -1488,6 +1599,7 @@ If it is 5–12, turn to [303].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>42</nextChapter>
 			<nextChapter>303</nextChapter>
@@ -1504,6 +1616,7 @@ If you would rather avoid crossing here and head back the way you have just come
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>166</nextChapter>
 			<nextChapter>14</nextChapter>
@@ -1521,6 +1634,7 @@ If you win the fight, turn to [295].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>295</nextChapter>
 		</nextChapters>
@@ -1534,6 +1648,7 @@ If you wish to continue south by the river, turn to [240].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>8</nextChapter>
 			<nextChapter>240</nextChapter>
@@ -1547,6 +1662,7 @@ Turn to [318].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>318</nextChapter>
 		</nextChapters>
@@ -1561,6 +1677,7 @@ If it is 7–12, turn to [256].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>22</nextChapter>
 			<nextChapter>99</nextChapter>
@@ -1577,6 +1694,7 @@ If you wish to descend the stairs, turn to [228].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>308</nextChapter>
 			<nextChapter>170</nextChapter>
@@ -1591,6 +1709,7 @@ If you wish to try to free Madelon, turn to [73].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>296</nextChapter>
 			<nextChapter>73</nextChapter>
@@ -1603,6 +1722,7 @@ If you decide to go east, turn to [92].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>33</nextChapter>
 			<nextChapter>92</nextChapter>
@@ -1616,6 +1736,7 @@ Turn to [248].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>248</nextChapter>
 		</nextChapters>
@@ -1629,6 +1750,7 @@ If you win the combat, turn to [350].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>350</nextChapter>
 		</nextChapters>
@@ -1642,6 +1764,7 @@ Enter the mines by turning to [315].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>315</nextChapter>
 		</nextChapters>
@@ -1654,6 +1777,7 @@ If you wish to run back to the watchtower, turn to [107].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>333</nextChapter>
@@ -1671,6 +1795,7 @@ ENDURANCE 24 If you win, turn to [261].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>261</nextChapter>
 		</nextChapters>
@@ -1685,6 +1810,7 @@ If it is 5–9, turn to [171].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>25</nextChapter>
 			<nextChapter>171</nextChapter>
@@ -1699,6 +1825,7 @@ If you wish to help the ranger who is fighting at the bottom of the stairs, turn
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>178</nextChapter>
 			<nextChapter>245</nextChapter>
@@ -1714,6 +1841,7 @@ If it is 5–12, turn to [98].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>103</nextChapter>
 			<nextChapter>98</nextChapter>
@@ -1726,6 +1854,7 @@ You are hungry and must now eat a Meal or lose 3 ENDURANCE points.6 Make the nec
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>309</nextChapter>
 		</nextChapters>
@@ -1738,6 +1867,7 @@ If you wish to continue following the river towards the east, turn to [331].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>68</nextChapter>
 			<nextChapter>331</nextChapter>
@@ -1750,6 +1880,7 @@ Turn to [185].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>185</nextChapter>
 		</nextChapters>
@@ -1762,6 +1893,7 @@ If you wish to question the old woman, turn to [287].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>67</nextChapter>
 			<nextChapter>287</nextChapter>
@@ -1776,6 +1908,7 @@ You may evade combat at any time by running towards Ruanon. Turn to [307]. If yo
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>17</nextChapter>
 			<nextChapter>307</nextChapter>
@@ -1790,6 +1923,7 @@ If you decide to call off your search, return along the hill track and turn to [
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>91</nextChapter>
 			<nextChapter>191</nextChapter>
@@ -1804,6 +1938,7 @@ If you wish to head south at the gallop, to try to reach the shelter of the Ruan
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>284</nextChapter>
 			<nextChapter>211</nextChapter>
@@ -1818,6 +1953,7 @@ If you do not possess this skill, turn to [216].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>313</nextChapter>
 			<nextChapter>216</nextChapter>
@@ -1832,6 +1968,7 @@ Turn to [12].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>12</nextChapter>
 		</nextChapters>
@@ -1845,6 +1982,7 @@ If you win the combat, turn to [152].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>81</nextChapter>
 			<nextChapter>152</nextChapter>
@@ -1860,6 +1998,7 @@ If you decide that it is far too dangerous to stay here, you can still ride east
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>206</nextChapter>
 			<nextChapter>330</nextChapter>
@@ -1874,6 +2013,7 @@ If you wish to pass through the trees to the left, turn to [314].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>70</nextChapter>
 			<nextChapter>314</nextChapter>
@@ -1887,6 +2027,7 @@ Turn to [253].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>253</nextChapter>
 		</nextChapters>
@@ -1900,6 +2041,7 @@ If you wish to try to enter the temple via the unguarded marble stairs, turn to 
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>183</nextChapter>
@@ -1917,6 +2059,7 @@ If you kill both guards in combat, turn to [230].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>87</nextChapter>
 			<nextChapter>230</nextChapter>
@@ -1929,6 +2072,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -1941,6 +2085,7 @@ If you wish to press on regardless of fatigue, turn to [162].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>322</nextChapter>
 			<nextChapter>162</nextChapter>
@@ -1954,6 +2099,7 @@ Turn to [272].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>272</nextChapter>
 		</nextChapters>
@@ -1966,6 +2112,7 @@ ENDURANCE 23 If you win the combat, turn to [280].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>280</nextChapter>
 		</nextChapters>
@@ -1977,6 +2124,7 @@ A battle-cry, proud and strident pursues them across the plain: ‘For Sommerlun
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>137</nextChapter>
@@ -1990,6 +2138,7 @@ Turn to [188].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>188</nextChapter>
 		</nextChapters>
@@ -2004,6 +2153,7 @@ If you wish to call off the search, you can return along the hill track by turni
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>164</nextChapter>
 			<nextChapter>288</nextChapter>
@@ -2019,6 +2169,7 @@ If you wish to try to lure them into the tunnel and capture them alive, turn to 
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>320</nextChapter>
 			<nextChapter>197</nextChapter>
@@ -2036,6 +2187,7 @@ Turn to [81].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>81</nextChapter>
 		</nextChapters>
@@ -2049,6 +2201,7 @@ If you win the combat, turn to [174].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>174</nextChapter>
 		</nextChapters>
@@ -2062,6 +2215,7 @@ If it is 3–9, turn to [51].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>120</nextChapter>
 			<nextChapter>51</nextChapter>
@@ -2074,6 +2228,7 @@ Turn to [225].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>225</nextChapter>
 		</nextChapters>
@@ -2086,6 +2241,7 @@ If you decide to retrace your steps back to the previous chamber and take the so
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>212</nextChapter>
 			<nextChapter>101</nextChapter>
@@ -2098,6 +2254,7 @@ Turn to [309].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>309</nextChapter>
 		</nextChapters>
@@ -2110,6 +2267,7 @@ Make the necessary adjustments to your Action Chart before turning to [219].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>219</nextChapter>
 		</nextChapters>
@@ -2123,6 +2281,7 @@ Turn to [204].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>204</nextChapter>
 		</nextChapters>
@@ -2135,6 +2294,7 @@ If you wish to send your rangers into the hut, turn to [306].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>84</nextChapter>
 			<nextChapter>205</nextChapter>
@@ -2150,6 +2310,7 @@ If you decide to ignore the command and stay where you are, turn to [294].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>27</nextChapter>
 			<nextChapter>144</nextChapter>
@@ -2164,6 +2325,7 @@ If you wish to go south, turn to [117].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>214</nextChapter>
 			<nextChapter>117</nextChapter>
@@ -2177,6 +2339,7 @@ Turn to [249].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>249</nextChapter>
 		</nextChapters>
@@ -2189,6 +2352,7 @@ If you decide to order a hasty retreat into the mine, turn to [52].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>299</nextChapter>
 			<nextChapter>52</nextChapter>
@@ -2202,6 +2366,7 @@ If you decline the food, you must now eat a Meal from your Backpack or lose 3 EN
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>319</nextChapter>
 			<nextChapter>13</nextChapter>
@@ -2214,6 +2379,7 @@ Turn to [232].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>232</nextChapter>
 		</nextChapters>
@@ -2225,6 +2391,7 @@ Make the appropriate adjustments to your Action Chart, and turn to [185].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>185</nextChapter>
 		</nextChapters>
@@ -2236,6 +2403,7 @@ If you do not possess this Special Item, turn to [85].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>34</nextChapter>
@@ -2251,6 +2419,7 @@ Turn to [123].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>123</nextChapter>
 		</nextChapters>
@@ -2263,6 +2432,7 @@ If you wish to continue along the passage, turn to [221].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>228</nextChapter>
 			<nextChapter>221</nextChapter>
@@ -2277,6 +2447,7 @@ If you decide to brave a possible storm and continue to ride south, turn to [141
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>63</nextChapter>
 			<nextChapter>141</nextChapter>
@@ -2289,6 +2460,7 @@ Turn to [55].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>55</nextChapter>
 		</nextChapters>
@@ -2303,6 +2475,7 @@ If it is 7–11, turn to [179].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>275</nextChapter>
 			<nextChapter>143</nextChapter>
@@ -2317,6 +2490,7 @@ Turn to [148].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>148</nextChapter>
 		</nextChapters>
@@ -2329,6 +2503,7 @@ Turn to [297].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>297</nextChapter>
 		</nextChapters>
@@ -2341,6 +2516,7 @@ ENDURANCE 25 If you win, turn to [7].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>7</nextChapter>
 		</nextChapters>
@@ -2353,6 +2529,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -2364,6 +2541,7 @@ Turn to [245].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>245</nextChapter>
 		</nextChapters>
@@ -2375,6 +2553,7 @@ Turn to [335].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>335</nextChapter>
 		</nextChapters>
@@ -2386,6 +2565,7 @@ Turn to [241].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>241</nextChapter>
 		</nextChapters>
@@ -2397,6 +2577,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -2410,6 +2591,7 @@ If you decide to let him go, return to your men by turning to [165].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>332</nextChapter>
 			<nextChapter>58</nextChapter>
@@ -2429,6 +2611,7 @@ If it is 7–13, turn to [338].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>198</nextChapter>
 			<nextChapter>338</nextChapter>
@@ -2442,6 +2625,7 @@ If you wish to dive over the parapet of the bridge to avoid them, turn to [342].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>202</nextChapter>
 			<nextChapter>342</nextChapter>
@@ -2454,6 +2638,7 @@ Turn to [40].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>40</nextChapter>
 		</nextChapters>
@@ -2468,6 +2653,7 @@ If you win the fight, turn to [243].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>66</nextChapter>
 			<nextChapter>243</nextChapter>
@@ -2480,6 +2666,7 @@ Turn to [164].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>164</nextChapter>
 		</nextChapters>
@@ -2491,6 +2678,7 @@ Turn to [233].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>233</nextChapter>
 		</nextChapters>
@@ -2504,6 +2692,7 @@ If it is 5–9, turn to [47].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>234</nextChapter>
 			<nextChapter>47</nextChapter>
@@ -2516,6 +2705,7 @@ Turn to [335].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>335</nextChapter>
 		</nextChapters>
@@ -2528,6 +2718,7 @@ If you decide to ignore the wreck, you can continue your ride south along the hi
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>337</nextChapter>
 			<nextChapter>297</nextChapter>
@@ -2540,6 +2731,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -2550,6 +2742,7 @@ ENDURANCE 30 If you are still alive after two rounds of combat or if you have wo
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>311</nextChapter>
@@ -2565,6 +2758,7 @@ If you win the combat, turn to [32].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>32</nextChapter>
 		</nextChapters>
@@ -2579,6 +2773,7 @@ If you do not wish to question the man further, you can prepare for a night's sl
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>239</nextChapter>
 			<nextChapter>266</nextChapter>
@@ -2594,6 +2789,7 @@ If you win, turn to [217].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>217</nextChapter>
 		</nextChapters>
@@ -2607,6 +2803,7 @@ If you wish to leave them and continue on your way, turn to [64].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>268</nextChapter>
 			<nextChapter>76</nextChapter>
@@ -2621,6 +2818,7 @@ ENDURANCE 30 If you win the combat, turn to [229].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>229</nextChapter>
 		</nextChapters>
@@ -2633,6 +2831,7 @@ If you wish to attack the guard to prevent him from reaching the rope, turn to [
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>271</nextChapter>
 			<nextChapter>56</nextChapter>
@@ -2649,6 +2848,7 @@ If you wish to evade them, you must run across the open plain towards Ruanon—e
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>45</nextChapter>
 			<nextChapter>133</nextChapter>
@@ -2662,6 +2862,7 @@ Turn to [65].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>65</nextChapter>
 		</nextChapters>
@@ -2680,6 +2881,7 @@ If you win the combat, turn to [237].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>342</nextChapter>
 			<nextChapter>237</nextChapter>
@@ -2693,6 +2895,7 @@ If you wish to escape across the bridge, turn to [271].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>108</nextChapter>
 			<nextChapter>271</nextChapter>
@@ -2707,6 +2910,7 @@ Turn to [142].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>142</nextChapter>
 		</nextChapters>
@@ -2719,6 +2923,7 @@ Turn to [84].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>84</nextChapter>
 		</nextChapters>
@@ -2731,6 +2936,7 @@ If you wish to enter the valley under the cover of the forest, turn to [226].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>82</nextChapter>
 			<nextChapter>226</nextChapter>
@@ -2746,6 +2952,7 @@ If it is 5–11, turn to [218].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>336</nextChapter>
 			<nextChapter>218</nextChapter>
@@ -2761,6 +2968,7 @@ ENDURANCE 22 If you kill all three guards, turn to [199].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>199</nextChapter>
 		</nextChapters>
@@ -2772,6 +2980,7 @@ If you have yet to reach this level of Kai training, turn to [43].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>111</nextChapter>
@@ -2787,6 +2996,7 @@ If you wish to continue along the street, turn to [301].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>67</nextChapter>
 			<nextChapter>132</nextChapter>
@@ -2803,6 +3013,7 @@ If it is 5–9, turn to [120].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>51</nextChapter>
 			<nextChapter>120</nextChapter>
@@ -2816,6 +3027,7 @@ If you do not possess this skill, search for an exit from the chamber, and turn 
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>41</nextChapter>
 			<nextChapter>276</nextChapter>
@@ -2834,6 +3046,7 @@ Turn to [180].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>180</nextChapter>
 		</nextChapters>
@@ -2846,6 +3059,7 @@ If you decide to go back to the chamber and take the south tunnel, turn to [117]
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>46</nextChapter>
 			<nextChapter>117</nextChapter>
@@ -2860,6 +3074,7 @@ If you wish to distract his attention from the altar without attacking him, turn
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>296</nextChapter>
 			<nextChapter>119</nextChapter>
@@ -2873,6 +3088,7 @@ If you wish to grab the oars and row for the other side of the river, turn to [1
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>304</nextChapter>
 			<nextChapter>189</nextChapter>
@@ -2885,6 +3101,7 @@ Turn to [345].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>345</nextChapter>
 		</nextChapters>
@@ -2896,6 +3113,7 @@ Turn to [223].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>223</nextChapter>
 		</nextChapters>
@@ -2908,6 +3126,7 @@ If you wish to ignore the wagon, begin to climb the steep tunnel by turning to [
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>167</nextChapter>
 			<nextChapter>185</nextChapter>
@@ -2921,6 +3140,7 @@ If you wish to evade combat, turn to [163].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>90</nextChapter>
 			<nextChapter>163</nextChapter>
@@ -2935,6 +3155,7 @@ If you would rather leap from the parapet of the bridge into the unknown depths 
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>50</nextChapter>
 			<nextChapter>228</nextChapter>
@@ -2949,6 +3170,7 @@ If you wish to keep this sword, mark it on your Action Chart as a Weapon. Turn t
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>165</nextChapter>
 		</nextChapters>
@@ -2961,6 +3183,7 @@ If you wish to evade combat, turn to [128].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>77</nextChapter>
@@ -2976,6 +3199,7 @@ If you wish to enter the right tunnel, turn to [208].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>60</nextChapter>
 			<nextChapter>199</nextChapter>
@@ -2995,6 +3219,7 @@ If it is 0, turn to [181].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>20</nextChapter>
 			<nextChapter>300</nextChapter>
@@ -3009,6 +3234,7 @@ If you decide to forsake the forest and press on along the highway instead, turn
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>21</nextChapter>
 			<nextChapter>82</nextChapter>
@@ -3022,6 +3248,7 @@ If you would rather ignore them and continue your ride, turn to [120].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>328</nextChapter>
 			<nextChapter>120</nextChapter>
@@ -3035,6 +3262,7 @@ If you wish to make for the stairs, turn to [105].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>23</nextChapter>
 			<nextChapter>105</nextChapter>
@@ -3047,6 +3275,7 @@ Turn to [235].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>235</nextChapter>
 		</nextChapters>
@@ -3064,6 +3293,7 @@ Turn to [224].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>224</nextChapter>
 		</nextChapters>
@@ -3079,6 +3309,7 @@ Turn to [348].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>348</nextChapter>
 		</nextChapters>
@@ -3091,6 +3322,7 @@ If you wish to continue downstream and look for some other way to cross the rive
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>68</nextChapter>
 			<nextChapter>130</nextChapter>
@@ -3104,6 +3336,7 @@ ENDURANCE 26 If you win, turn to [312].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>312</nextChapter>
 		</nextChapters>
@@ -3118,6 +3351,7 @@ If you win the combat, turn to [32].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>32</nextChapter>
 		</nextChapters>
@@ -3130,6 +3364,7 @@ If you wish to take a look over the low balcony, turn to [100].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>177</nextChapter>
 			<nextChapter>100</nextChapter>
@@ -3144,6 +3379,7 @@ If you want to change direction as soon as you are hidden from sight, turn to [1
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>123</nextChapter>
 			<nextChapter>169</nextChapter>
@@ -3156,6 +3392,7 @@ Turn to [348].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>348</nextChapter>
 		</nextChapters>
@@ -3167,6 +3404,7 @@ Turn to [223].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>223</nextChapter>
 		</nextChapters>
@@ -3178,6 +3416,7 @@ Turn to [324].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>324</nextChapter>
 		</nextChapters>
@@ -3192,6 +3431,7 @@ If it is 5–9, turn to [158].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>94</nextChapter>
 			<nextChapter>158</nextChapter>
@@ -3204,6 +3444,7 @@ If you wish to row across to the other bank, abandon the boat and continue on fo
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>309</nextChapter>
 			<nextChapter>115</nextChapter>
@@ -3217,6 +3458,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -3228,6 +3470,7 @@ Turn to [124].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>124</nextChapter>
 		</nextChapters>
@@ -3242,6 +3485,7 @@ Or, if you wish, you may enter the right tunnel by turning to [11].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>250</nextChapter>
 			<nextChapter>335</nextChapter>
@@ -3256,6 +3500,7 @@ If you wish to leave by descending the stairs, turn to [83].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>346</nextChapter>
 			<nextChapter>83</nextChapter>
@@ -3270,6 +3515,7 @@ If you are still alive but do not possess this Special Item, turn to [85].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>34</nextChapter>
 			<nextChapter>85</nextChapter>
@@ -3286,6 +3532,7 @@ If it is 5–9, turn to [25].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>171</nextChapter>
 			<nextChapter>25</nextChapter>
@@ -3300,6 +3547,7 @@ Turn to [254].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>254</nextChapter>
 		</nextChapters>
@@ -3316,6 +3564,7 @@ If it is 8–11, turn to [39].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>153</nextChapter>
@@ -3331,6 +3580,7 @@ Turn to [335].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>335</nextChapter>
 		</nextChapters>
@@ -3346,6 +3596,7 @@ If you wish to explore the eastern track, turn to [293].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>175</nextChapter>
 			<nextChapter>38</nextChapter>
@@ -3361,6 +3612,7 @@ If you wish to continue downstream and look for some other way of crossing the r
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>68</nextChapter>
 			<nextChapter>130</nextChapter>
@@ -3375,6 +3627,7 @@ If you have yet to reach this level of training, turn to [135].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>72</nextChapter>
 			<nextChapter>135</nextChapter>
@@ -3391,6 +3644,7 @@ Alternatively you can enter the south tunnel by turning to [101].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>326</nextChapter>
 			<nextChapter>156</nextChapter>
@@ -3405,6 +3659,7 @@ Turn to [186].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>186</nextChapter>
 		</nextChapters>
@@ -3418,6 +3673,7 @@ Turn to [309].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>309</nextChapter>
 		</nextChapters>
@@ -3431,6 +3687,7 @@ If you wish to ignore it and investigate the door, turn to [131].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>302</nextChapter>
 			<nextChapter>131</nextChapter>
@@ -3446,6 +3703,7 @@ If you do not have this Special Item or this Discipline and Kai Rank, dive into 
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>305</nextChapter>
@@ -3461,6 +3719,7 @@ Turn to [141].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>141</nextChapter>
 		</nextChapters>
@@ -3474,6 +3733,7 @@ ENDURANCE 30 If you are still alive after 3 rounds of combat or if you have won 
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>311</nextChapter>
 		</nextChapters>
@@ -3489,6 +3749,7 @@ Turn to [348].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>348</nextChapter>
 		</nextChapters>
@@ -3501,6 +3762,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -3513,6 +3775,7 @@ If you wish to change direction and head west, turn to [169].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>123</nextChapter>
 			<nextChapter>169</nextChapter>
@@ -3527,6 +3790,7 @@ If you wish to head in the opposite direction to the tracks, turn to [191].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>134</nextChapter>
 			<nextChapter>191</nextChapter>
@@ -3540,6 +3804,7 @@ Turn to [307].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>307</nextChapter>
 		</nextChapters>
@@ -3552,6 +3817,7 @@ Turn to [324].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>324</nextChapter>
 		</nextChapters>
@@ -3564,6 +3830,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -3586,6 +3853,7 @@ If you wish to descend the spiral stairs, turn to [228].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>118</nextChapter>
 			<nextChapter>170</nextChapter>
@@ -3601,6 +3869,7 @@ Continue your exploration by turning to [145].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>145</nextChapter>
 		</nextChapters>
@@ -3616,6 +3885,7 @@ Alternatively, you can leave the vault and attempt to enter the temple via the c
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>29</nextChapter>
 			<nextChapter>168</nextChapter>
@@ -3634,6 +3904,7 @@ If it is 7–11, turn to [104].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>9</nextChapter>
 			<nextChapter>104</nextChapter>
@@ -3648,6 +3919,7 @@ Make all the necessary adjustments to your Action Chart before turning to [79].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>79</nextChapter>
 		</nextChapters>
@@ -3660,6 +3932,7 @@ If you wish to ignore them and let them pass, turn to [126].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>37</nextChapter>
@@ -3674,6 +3947,7 @@ If you do not possess this Special Item, turn to [325].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>283</nextChapter>
 			<nextChapter>325</nextChapter>
@@ -3686,6 +3960,7 @@ Turn to [335].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>335</nextChapter>
 		</nextChapters>
@@ -3698,6 +3973,7 @@ If you wish to escape from the chamber, you run back to the ladder and turn to [
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>88</nextChapter>
 			<nextChapter>26</nextChapter>
@@ -3712,6 +3988,7 @@ ENDURANCE 35 If you win the combat, turn to [155].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>155</nextChapter>
 		</nextChapters>
@@ -3725,6 +4002,7 @@ If you wish to change direction and head west, turn to [169].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>123</nextChapter>
 			<nextChapter>169</nextChapter>
@@ -3749,6 +4027,7 @@ If you do not possess it, turn to [289].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>327</nextChapter>
 			<nextChapter>289</nextChapter>
@@ -3765,6 +4044,7 @@ Turn to [348].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>348</nextChapter>
 		</nextChapters>
@@ -3778,6 +4058,7 @@ Turn to [185].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>185</nextChapter>
 		</nextChapters>
@@ -3790,6 +4071,7 @@ Turn to [257].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>257</nextChapter>
 		</nextChapters>
@@ -3803,6 +4085,7 @@ Turn to [350].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>350</nextChapter>
 		</nextChapters>
@@ -3812,11 +4095,11 @@ Turn to [350].
 Bandit Warrior: COMBAT SKILL 16
 ENDURANCE 25 You can evade combat at any time by turning to [89].
 If you win the combat, turn to [7].
-
 </description>
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>89</nextChapter>
 			<nextChapter>7</nextChapter>
@@ -3830,6 +4113,7 @@ ENDURANCE 28 If you win the combat, turn to [71].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>71</nextChapter>
 		</nextChapters>
@@ -3843,6 +4127,7 @@ Turn to [200].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>200</nextChapter>
 		</nextChapters>
@@ -3856,6 +4141,7 @@ ENDURANCE 27 If you win the fight, turn to [75].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>75</nextChapter>
 		</nextChapters>
@@ -3869,6 +4155,7 @@ If you decide to call off the search and return to the mine entrance, turn to [1
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>254</nextChapter>
 			<nextChapter>187</nextChapter>
@@ -3885,6 +4172,7 @@ If you wish to rally the defenders before the enemy reach the barricade, turn to
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>255</nextChapter>
@@ -3902,6 +4190,7 @@ If you decide to sheathe your weapon and approach them, your hand extended in a 
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>44</nextChapter>
 			<nextChapter>102</nextChapter>
@@ -3918,6 +4207,7 @@ Alternatively you can retrace your steps back to the gallery and take the other 
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>172</nextChapter>
 			<nextChapter>93</nextChapter>
@@ -3933,6 +4223,7 @@ If you want to change direction and head west, turn to [169].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>123</nextChapter>
 			<nextChapter>169</nextChapter>
@@ -3947,6 +4238,7 @@ If you do not possess this skill, turn to [150].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>18</nextChapter>
 			<nextChapter>150</nextChapter>
@@ -3960,6 +4252,7 @@ Turn to [200].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>200</nextChapter>
 		</nextChapters>
@@ -3971,6 +4264,7 @@ Turn to [345].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>345</nextChapter>
 		</nextChapters>
@@ -3983,6 +4277,7 @@ If you do not possess this Special Item, turn to [274].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>122</nextChapter>
 			<nextChapter>283</nextChapter>
@@ -3997,6 +4292,7 @@ If you wish to try to cross the river downstream, to the east, turn to [252].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>113</nextChapter>
 			<nextChapter>252</nextChapter>
@@ -4011,6 +4307,7 @@ Turn to [185].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>185</nextChapter>
 		</nextChapters>
@@ -4025,6 +4322,7 @@ ENDURANCE 29 If you win the fight, turn to [121].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>121</nextChapter>
 		</nextChapters>
@@ -4038,6 +4336,7 @@ Turn to [341].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>341</nextChapter>
 		</nextChapters>
@@ -4050,6 +4349,7 @@ If you do not possess this skill, turn to [236].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>106</nextChapter>
 			<nextChapter>236</nextChapter>
@@ -4067,6 +4367,7 @@ Examine the far door and turn to [131].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>131</nextChapter>
 		</nextChapters>
@@ -4078,6 +4379,7 @@ Turn to [348].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>348</nextChapter>
 		</nextChapters>
@@ -4092,6 +4394,7 @@ If the number is 5–9, turn to [234].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>47</nextChapter>
 			<nextChapter>234</nextChapter>
@@ -4105,6 +4408,7 @@ Turn to [204].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>204</nextChapter>
 		</nextChapters>
@@ -4116,6 +4420,7 @@ Turn to [84].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>84</nextChapter>
 		</nextChapters>
@@ -4129,6 +4434,7 @@ If you wish to stop and fight them, turn to [36].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>225</nextChapter>
 			<nextChapter>36</nextChapter>
@@ -4142,6 +4448,7 @@ ENDURANCE 30 If you win the combat, turn to [127].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>127</nextChapter>
@@ -4158,6 +4465,7 @@ If your total is 8–13, turn to [244].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>138</nextChapter>
 			<nextChapter>244</nextChapter>
@@ -4172,6 +4480,7 @@ ENDURANCE 25 If you win the combat, turn to [24].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>24</nextChapter>
 		</nextChapters>
@@ -4186,6 +4495,7 @@ If you wish to rally the Sommlending soldiers to repel the advancing spearmen, t
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>90</nextChapter>
 			<nextChapter>3</nextChapter>
@@ -4203,6 +4513,7 @@ If it is 3–9, turn to [51].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>120</nextChapter>
 			<nextChapter>51</nextChapter>
@@ -4216,6 +4527,7 @@ Turn to [96].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>96</nextChapter>
 		</nextChapters>
@@ -4229,6 +4541,7 @@ If you do not wish to enter the hut, continue your mission by turning to [258].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>53</nextChapter>
 			<nextChapter>258</nextChapter>
@@ -4244,6 +4557,7 @@ If you wish to go right, turn to [145].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>48</nextChapter>
 			<nextChapter>269</nextChapter>
@@ -4260,6 +4574,7 @@ If you win the combat, turn to [146].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>31</nextChapter>
 			<nextChapter>146</nextChapter>
@@ -4273,6 +4588,7 @@ Turn to [348].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>348</nextChapter>
 		</nextChapters>
@@ -4289,6 +4605,7 @@ If you do not possess a Scroll, turn to [57].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>279</nextChapter>
@@ -4305,6 +4622,7 @@ If it is 5–9, turn to [171].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>25</nextChapter>
 			<nextChapter>171</nextChapter>
@@ -4320,6 +4638,7 @@ If you wish to question them, turn to [76].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>268</nextChapter>
 			<nextChapter>76</nextChapter>
@@ -4333,6 +4652,7 @@ Turn to [309].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>309</nextChapter>
 		</nextChapters>
@@ -4349,6 +4669,7 @@ If you wish to take the south tunnel, turn to [129].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>54</nextChapter>
 			<nextChapter>129</nextChapter>
@@ -4363,6 +4684,7 @@ Turn to [148].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>148</nextChapter>
 		</nextChapters>
@@ -4377,6 +4699,7 @@ If you wish to jump from the first-floor window, turn to [196].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>114</nextChapter>
 			<nextChapter>196</nextChapter>
@@ -4391,6 +4714,7 @@ ENDURANCE 29 If you win the combat, turn to [350].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>350</nextChapter>
 		</nextChapters>
@@ -4403,6 +4727,7 @@ Turn to [101].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>101</nextChapter>
 		</nextChapters>
@@ -4414,6 +4739,7 @@ Turn to [101].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>289</nextChapter>
 		</nextChapters>
@@ -4426,6 +4752,7 @@ Turn to [120].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>120</nextChapter>
 		</nextChapters>
@@ -4438,6 +4765,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -4450,6 +4778,7 @@ If you wish to investigate the track that leads up into the hills, turn to [293]
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>38</nextChapter>
 			<nextChapter>175</nextChapter>
@@ -4465,6 +4794,7 @@ If you do not have this skill, you can search for an exit from the chamber and t
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>41</nextChapter>
 			<nextChapter>276</nextChapter>
@@ -4477,6 +4807,7 @@ Turn to [222].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>222</nextChapter>
 		</nextChapters>
@@ -4491,6 +4822,7 @@ If you both lose exactly the same number of ENDURANCE points in this round of co
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>true</fight>
 		<nextChapters>
 			<nextChapter>209</nextChapter>
 			<nextChapter>220</nextChapter>
@@ -4504,6 +4836,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -4516,6 +4849,7 @@ If you possess neither of the above Kai Disciplines, you will have to launch a s
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>35</nextChapter>
 			<nextChapter>317</nextChapter>
@@ -4530,6 +4864,7 @@ Turn to [223].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>223</nextChapter>
 		</nextChapters>
@@ -4541,6 +4876,7 @@ Turn to [297].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>297</nextChapter>
 		</nextChapters>
@@ -4553,6 +4889,7 @@ Turn to [235].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>235</nextChapter>
 		</nextChapters>
@@ -4565,6 +4902,7 @@ Turn to [233].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>233</nextChapter>
 		</nextChapters>
@@ -4577,6 +4915,7 @@ Turn to [32].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>32</nextChapter>
 		</nextChapters>
@@ -4589,6 +4928,7 @@ Turn to [116].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>116</nextChapter>
 		</nextChapters>
@@ -4601,6 +4941,7 @@ Make the necessary adjustments to your Action Chart before turning to [219].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>219</nextChapter>
 		</nextChapters>
@@ -4614,6 +4955,7 @@ If it is 7–12, turn to [61].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter></nextChapter>
 			<nextChapter>194</nextChapter>
@@ -4628,6 +4970,7 @@ If you have not yet reached this level of Kai training, turn to [43].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>111</nextChapter>
 			<nextChapter>43</nextChapter>
@@ -4642,6 +4985,7 @@ If it is 7–9, turn to [120].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>51</nextChapter>
 			<nextChapter>120</nextChapter>
@@ -4655,6 +4999,7 @@ Turn to [335].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>335</nextChapter>
 		</nextChapters>
@@ -4667,6 +5012,7 @@ Your life and your mission end here.
 		<flag_fixed>false</flag_fixed>
 		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
@@ -4679,6 +5025,7 @@ Turn to [185].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>185</nextChapter>
 		</nextChapters>
@@ -4691,6 +5038,7 @@ Turn to [55].
 		<flag_fixed>false</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 			<nextChapter>55</nextChapter>
 		</nextChapters>
@@ -4704,6 +5052,7 @@ Shadow on the Sand
 		<flag_fixed>true</flag_fixed>
 		<flag_death>false</flag_death>
 		<flag_final>true</flag_final>
+		<fight>false</fight>
 		<nextChapters>
 		</nextChapters>
 	</chapter>
