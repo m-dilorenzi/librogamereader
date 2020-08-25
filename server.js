@@ -235,8 +235,7 @@ function simulateRoundOfFight()
                         puoi procedere con il prossimo round o se tu o il tuo avversario \
                         avete esaurito i punti resistenza e siete deceduti. In caso \
                         di morte, ricomincia la storia dall\'inizio con l\'apposito comando, \
-                        perchè la tua avventura finisce qui, e ricomincia la tua storia con \
-                        l\'apposito comando!';
+                        perchè la tua avventura finisce qui!';
     var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
     return jsonObj;
 }
