@@ -162,15 +162,117 @@ app.post('/', requestVerifier, async function(req, res) {
                 break;
             
             case 'restartBookIntent':
-                // the user wants to start reading the book all over again
+                // user wants to start reading the book all over again
                 console.log('Restart book...');
                 res.json(restartBook(0, id_request));
+                break;
+
+            case 'simulateEntireFightIntent':
+                // user wants to simulate an entire fight
+                console.log('Simulate entire fight...');
+                res.json(simulateEntireFight());
+                break;
+            
+            case 'simulateRoundOfFightIntent':
+                // user wants to simulate just a round of a fight
+                console.log('Simulate a round of the fight...');
+                res.json(simulateRoundOfFight());
+                break;
+            
+            case 'introductionRulesIntent':
+                // user wants to know the rules of the game
+                console.log('Show the user the rules of the game...');
+                res.json(introductionRules());
                 break;
 
             default:
         }
     }
 });
+
+
+// function used to tell the user which abilities he has to bring
+// with him during the story
+function introductionRules()
+{
+    var speechOutput = 'Prima di iniziare il tuo viaggio, è importante conoscere \
+                        quali abilità possiede Lupo Solitario, ovvero tu, che sarai \
+                        il protagonista della storia! Avrai due caratteristiche principali: \
+                        combattività e resistenza. Se sei a disposizione del libro cartaceo, \
+                        puoi determinare i valori iniziali delle tue abilità direttamente \
+                        dalla tabella del destino, altrimenti puoi utilizzare il generatore \
+                        di numeri casuali con l\'apposito comando offerto direttamente dalla skill.\ Ti \
+                        basterà generare un numero tra 0 e 9 ed aggiungere 10 per ottenere il totale \
+                        della tua combattività, mentre dovrai aggiungere 20 per ottenere la tua \
+                        resistenza. Con queste due attività potrai poi prendere parte ai combattimenti. \
+                        Durante il cammino nella tua avventura, incontrerai diversi nemici, dei quali \
+                        verranno indicati combattività e resistenza. Tramite gli opportuni comandi \
+                        usufruibili pronunciando ,scopri le funzioni, potrai simulare l\'intero \
+                        combattimento o solo un round di esso, oppure potrai svolgerlo tu da solo e poi\
+                        proseguire per la relativa strada seguendo le regole specificate nell\'introduzione \
+                        del libro cartaceo. Una volta che hai esaurito i tuoi punti resistenza, la tua \
+                        avventura finisce, e potrai ricominciare la tua storia sperando di avere fortuna. \
+                        In bocca al lupo Lupo Solitario!';
+    var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
+    return jsonObj;
+}
+
+// function used when the user wants to simulate just one round
+// of the fight. It return how many endurance points the user and
+// the opponent lost 
+function simulateRoundOfFight()
+{
+    // according to the existing table at the end of the book
+    // in a round the maximum points that a character can lose
+    // is 18
+    var userPoints  = Math.floor(Math.random() * 19); 
+    var oppPoints   = Math.floor(Math.random() * 19);
+
+    var speechOutput = 'Al termine di questo round del combattimento, hai \
+                        perso ' + userPoints + ' punti di resistenza, mentre \
+                        il tuo avversario ne ha persi ' + oppPoints + '.';
+    speechOutput    += ' Aggiorna il tuo punteggio della resistenza e controlla se \
+                        puoi procedere con il prossimo round o se tu o il tuo avversario \
+                        avete esaurito i punti resistenza e siete deceduti. In caso \
+                        di morte, ricomincia la storia dall\'inizio con l\'apposito comando \
+                        perchè la tua avventura finisce qui. '
+    var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
+    return jsonObj;
+}
+
+// function used when the user wants to simulate an entire fight. The user can
+// win or lose the fight, rispctively with probability of 75% and 25%. If the user
+// loses, he must restart the story from the beginning, otherwise, Alexa will tell
+// the user how many endurance point he lost and how many round the fight lasted
+function simulateEntireFight()
+{
+    // generate random number between 1 and 100. If number <= 75
+    // the user wins the fight, otherwise he loses
+    var number = Math.floor(Math.random() * 100) + 1;
+
+    if(number <= 75)
+    {
+        // user wins the fight
+        var rounds = Math.floor(Math.random() * 8) + 1;
+        var points = Math.floor(Math.random() * 20) + 1;
+        var speechOutput = 'Complimenti, hai vinto il combattimento!'
+        speechOutput += ' Il combattimento è durato ' + rounds + ' round, e purtroppo \
+                        hai perso ' + points + ' punti resistenza.';
+        speechOutput += ' Ricordati di tenere traccia della tua combattività e dei\
+                        tuoi punti resistenza per i prossimi combattimenti!';
+        var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
+        return jsonObj;
+        
+    }else{
+
+        // user loses the fight
+        var speechOutput = 'Purtroppo hai perso tutti i tuoi punti resistenza. La tua \
+                            avventura finisce qui. Ricomincia la tua storia pronunciando \
+                            vai al capitolo 1, sperando questa volta di avere più fortuna!';
+        var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
+        return jsonObj;
+    }
+}
 
 
 // function used when te user wants to understand what he can do with the skill
@@ -189,15 +291,15 @@ function helpCommand()
     speechOutput       += ' Durante la tua avventura, dovrai affrontare combattimenti e scelte basate su \
                             numeri casuali estratti come ad esempio con il lancio di un dado. La skill ti \
                             permette di simulare questo lancio di dado pronunciando \'estrai un numero casuale\
-                            tra a ed b\', dove a ed b sono i due estremi compresi dell\'intervallo da cui \
+                            tra numero 1 ed numero 2\', dove numero 1 e numero 2 sono i due estremi compresi dell\'intervallo da cui \
                             desideri estrarre il numero.';
-    speechOutput       += ' Se ti trovi davanti un combattimento, potrai simularlo pronunciando \'simula combattimento\'. \
+    speechOutput       += ' Se ti trovi davanti un combattimento, potrai simularlo pronunciando \'simula intero combattimento\'. \
                             Ti verrà notificato l\'esito del combattimento con le informazioni necessarie come i punti \
                             di resistenza persi o il numero di round in cui il combattimento è stato eseguito.';
     speechOutput       += ' Potrai inoltre simulare anche un solo round del combattimento pronunciando \'simula un round \
                             del combattimento\'. Ti verranno poi comunicati il numero di punti resistenza persi da te e dal \
                             tuo nemico.';
-    speechOutput       += ' Potrai infine uscire dalla skill, pronunciando \'stop\''
+    speechOutput       += ' Potrai infine uscire dalla skill, pronunciando \'stop\'.'
     speechOutput       += ' Inizia ora la lettura pronunciando \'inizia la lettura\'.';
                               
     var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
@@ -282,7 +384,7 @@ function restartBook(chapter, id_request)
     updateLastChapter(id_request, chapter);
     const speechOutput = WHISPER + 'Hai eliminato tutti i progressi della tua storia. \
                                     Ora dovrai ricominciare il tuo viaggio dall\'inizio. \
-                                    Pronuncia \'vai al capitolo 1\' per ricominciare la lettura!' + PAUSE;
+                                    Pronuncia vai al capitolo 1 per ricominciare la lettura!' + PAUSE;
     return buildResponseWithRepromt(speechOutput, false, '', '');
 }
 
@@ -301,9 +403,12 @@ function helloMessage()
 {
     var speechOutput  = 'Ciao! Benvenuto su Libro Game Reader! Con questa skill potrai \
                         interagire con un libro gioco in maniera dinamica!';
-    speechOutput += ' Pronuncia scopri le funzioni per ascoltare quali comandi puoi utilizzare \
-                        con questa skill, oppure pronuncia inizia la lettura per iniziare o \
-                        riprendere la lettura da dove avevi lasciato l\'ultima volta!'
+    speechOutput += ' Pronuncia ,scopri le funzioni, per ascoltare quali comandi puoi utilizzare \
+                        con questa skill, oppure pronuncia ,leggi le regole del gioco, per \
+                        scoprire le meccaniche e le caratteristiche con il quale Lupo Solitario \
+                        avrà a che fare lungo il suo cammino. In alternativa, se hai già utilizzato la skill \
+                        e sei a conoscenza dei suoi comandi, pronuncia ,inizia la lettura, per iniziare \
+                        o riprendere la lettura da dove avevi lasciato l\'ultima volta!'
     
     var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
     return jsonObj;
