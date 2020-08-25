@@ -67,7 +67,7 @@ app.post('/', requestVerifier, async function(req, res) {
     // get the user unique id request. It will be used to
     // store the book progress in the Postgres database
     var id_request = req.body.session.user.userId;
-    console.log('Richiesta da utente: '+id_request);
+    // console.log('Richiesta da utente: '+id_request);
 
     // get all users already registered to the database
     var allUsers        = await database_connection.getAllUsers();
@@ -85,10 +85,8 @@ app.post('/', requestVerifier, async function(req, res) {
     }
 
     // debug log used to verify the correctness of data 
-    console.log('Penultimo capitolo letto: ' + last_chapter);    
-    console.log('Ultimo capitolo letto:    ' + actual_chapter);
-    process.env.ACTUAL_CHAPTER = actual_chapter; 
-
+    // console.log('Penultimo capitolo letto: ' + last_chapter);    
+    // console.log('Ultimo capitolo letto:    ' + actual_chapter); 
 
     // check what type of request the web service received
     if (req.body.request.type === 'LaunchRequest') 
@@ -109,19 +107,31 @@ app.post('/', requestVerifier, async function(req, res) {
                 console.log('Exit from the skill...')
                 res.json(stopAndExit());
                 break;
+            
+            case 'helpIntent':
+                // user wants to understand what he can do in the skill
+                console.log('List possible commands...');
+                res.json(helpCommand());
+                break;
+            
+            case 'startReadingIntent':
+                // user wants to start reading the book
+                console.log('Start or resume reading...');
+                res.json(startReading(actual_chapter));
+                break;
   
             case 'getNextChapterIntent':
                 // user wants to get a new chapter
                 console.log('Get new chapter...');
                 var chapter = req.body.request.intent.slots.capitolo.value;
-                res.json(getNewChapter(chapter, id_request));
+                res.json(getNewChapter(chapter, actual_chapter, id_request));
                 break;
             
             case 'getLastChapterIntent':
                 // user wants to go back to the penultimate chapter he read
                 // if the user is reading the first chapter or or he has yet 
                 // to start reading the book, an error will be notified by Alexa
-                if(process.env.ACTUAL_CHAPTER == 0 || process.env.ACTUAL_CHAPTER == 1)
+                if(actual_chapter == 0 || actual_chapter == 1)
                 {
                     var speechOutput = 'Non puoi tornare al capitolo precedente!';
                     res.json(buildResponseWithRepromt(speechOutput, false, '', ''));
@@ -133,8 +143,8 @@ app.post('/', requestVerifier, async function(req, res) {
             
             case 'readAgainIntent':
                 // user wants to read again the actual chapter
-                console.log('Read again last chapter...');
-                res.json(readAgainChapter(process.env.ACTUAL_CHAPTER));
+                console.log('Read again actual chapter...');
+                res.json(readAgainChapter(actual_chapter));
                 break;
 
             case 'getRandomNumberIntent':
@@ -155,6 +165,37 @@ app.post('/', requestVerifier, async function(req, res) {
         }
     }
 });
+
+
+// function used when te user wants to understand what he can do with the skill
+function helpCommand()
+{
+    var speechOutput    = 'Con questa skill potrai leggere in maniera dinamica un libro gioco.';
+    speechOutput       += ' Per iniziare la lettura del libro gioco pronuncia inizia la lettura ';
+    speechOutput       += ' Durante la lettura potrai, dove richiesto, tornare al capitolo precedente, \
+                            pronunciando torna al capitolo precedente.';
+    speechOutput       += ' Oppure, potrai proseguire ai capitoli successivi indicati nel testo, \
+                            pronunciando vai al capitolo seguito dal numero del capitolo con il quale \
+                            desideri procedere nella tua avventura.';
+    speechOutput       += ' Se vuoi rileggere il capitolo, ti basterà pronunciare rileggi. ';
+    speechOutput       += ' Potrai inoltre ricominciare la lettura dall\inizio del libro, perdendo però \
+                            tutti i progressi fatti, pronunciando ricomincia dall\'inizio. ';
+    speechOutput       += ' Durante la tua avventura, dovrai affrontare combattimenti e scelte basate su \
+                            numeri casuali estratti come ad esempio con il lancio di un dado. La skill ti \
+                            permette di simulare questo lancio di dado pronunciando estrai un numero casuale\
+                            tra x ed y, dove x ed y sono i due estremi compresi dell\'intervallo da cui \
+                            desideri estrarre il numero.';
+    speechOutput       += ' Se ti trovi davanti un combattimento, potrai simularlo pronunciando simula combattimento. \
+                            Ti verrà notificato l\'esito del combattimento con le informazioni necessarie come i punti \
+                            di resistenza persi o il numero di round in cui il combattimento è stato eseguito.';
+    speechOutput       += ' Potrai inoltre simulare anche un solo round del combattimento pronunciando simula un round \
+                            del combattimento. Ti verranno poi comunicati il numero di punti resistenza persi da te e dal \
+                            tuo nemico.';
+    speechOutput       += ' Inizia ora la lettura pronunciando inizia la lettura.';
+                              
+    var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
+    return jsonObj;
+}
 
 // function used to check if the user that made the request is already registered
 // to the database. If it is already registered, it return 'true', otherwise, it
@@ -216,11 +257,10 @@ function getRandomNumber(numInf, numSup)
 function getLastChapter(chapter, id_request)
 {
     const allChapters = convertToJson();
-    process.env.ACTUAL_CHAPTER = chapter;
     // update into the database the actual chapter which will be the
     // penultimate chapter
-    updateActualChapter(id_request, process.env.ACTUAL_CHAPTER);
-    var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
+    updateActualChapter(id_request, chapter);
+    var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
     const speechOutput = WHISPER + chapterToRead + PAUSE;
     return buildResponseWithRepromt(speechOutput, false, '', '');
 }
@@ -229,10 +269,10 @@ function getLastChapter(chapter, id_request)
 function restartBook(chapter, id_request)
 {
     const allChapters = convertToJson();
-    process.env.ACTUAL_CHAPTER = chapter;
     // update into the database the actual chapter which will be
     // the chapter number 1
     updateActualChapter(id_request, chapter);
+    updateLastChapter(id_request, 0);
     var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
     const speechOutput = WHISPER + chapterToRead + PAUSE;
     return buildResponseWithRepromt(speechOutput, false, '', '');
@@ -253,13 +293,25 @@ function helloMessage()
 {
     var speechOutput  = 'Ciao! Benvenuto su Libro Game Reader! Con questa skill potrai \
                         interagire con un libro gioco in maniera dinamica!';
-    if(process.env.ACTUAL_CHAPTER == 0)
-        speechOutput += ' Inizia ora a leggere il libro The Chasm of Doom, il quarto capitolo della \
-        famosa serie Lupo Solitario! Pronuncia vai al capitolo 1 per iniziare la lettura!';
-    else
-        speechOutput += ' Riprendi la lettura dal capitolo '+process.env.ACTUAL_CHAPTER+'. Pronuncia rileggi\
-        per riascoltarlo.';
+    speechOutput += ' Pronuncia scopri le funzioni per ascoltare quali comandi puoi utilizzare \
+                        con questa skill, oppure pronuncia inizia la lettura per iniziare o \
+                        riprendere la lettura da dove avevi lasciato l\'ultima volta!'
     
+    var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
+    return jsonObj;
+}
+
+// function used when the user wants to start or resume reading the book
+function startReading(actual_chapter)
+{
+    if(actual_chapter == 0)
+    {
+        var speechOutput = 'Inizia ora a leggere il libro The Chasm of Doom, il quarto capitolo della \
+        famosa serie Lupo Solitario! Pronuncia vai al capitolo 1 per iniziare la lettura!';
+    }else{
+        var speechOutput = 'Riprendi la lettura dal capitolo '+actual_chapter+'. Pronuncia rileggi\
+        per riascoltarlo.';
+    }
     var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
     return jsonObj;
 }
@@ -358,38 +410,37 @@ function updateLastChapter(user_id, chapter)
 // if the specified chapter choosed by the user could be reached from the actual chapter.
 // If the chapter can't be reached, Alexa tells the user which chapters can
 // be reached.
-function getNewChapter(chapter, id_request) 
+function getNewChapter(chapter, actual_chapter, id_request) 
 {
     const allChapters = convertToJson();
     console.log('Try to get chapter...'+chapter);
     
-    if(process.env.ACTUAL_CHAPTER != 0)
+    if(actual_chapter != 0)
     { 
-        if((chapter != process.env.ACTUAL_CHAPTER))
+        if((chapter != actual_chapter))
         {
-            if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length == undefined)
+            if(allChapters.chapters.chapter[(actual_chapter-1)].nextChapters.nextChapter.length == undefined)
                 var length = 1;
             else
-                var length = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter.length;
+                var length = allChapters.chapters.chapter[(actual_chapter-1)].nextChapters.nextChapter.length;
 
             if(length != 1)
             {
                 for(var i = 0; i < length; i++)
                 {
-                    if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i])
+                    if(chapter == allChapters.chapters.chapter[(actual_chapter-1)].nextChapters.nextChapter[i])
                     {
-                        updateLastChapter(id_request, process.env.ACTUAL_CHAPTER);
-                        process.env.ACTUAL_CHAPTER = chapter;
+                        updateLastChapter(id_request, actual_chapter);
                         updateActualChapter(id_request, chapter);
-                        var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
-                        if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_death == true)
+                        var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
+                        if(allChapters.chapters.chapter[(chapter-1)].flag_death == true)
                         { 
                             chapterToRead += ' Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
                             tuo percorso e scegli una strada diversa pronunciando ricomincia dall\'inizio!';
                             updateActualChapter(id_request, 0);
                             updateLastChapter(id_request, 0);
                         }
-                        if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_final == true)
+                        if(allChapters.chapters.chapter[(chapter-1)].flag_final == true)
                         { 
                             chapterToRead += ' Complimenti! Sei uscito vittorioso dalla tua avventura! Pronuncia stop per uscire dalla skill\
                             oppure prununcia ricomincia dal\'inizio per ricominciare la tua avventura percorrendo una strada diversa!';
@@ -403,27 +454,26 @@ function getNewChapter(chapter, id_request)
                 var speechOutput = 'Puoi proseguire solamente andando ai capitoli: ';
                 for(var i = 0; i < length; i++)
                 {
-                    speechOutput += allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter[i]+ ' ';
+                    speechOutput += allChapters.chapters.chapter[(actual_chapter-1)].nextChapters.nextChapter[i]+ ' ';
                 }
                 return buildResponseWithRepromt(speechOutput, false, '', '');
             }
             else
             {
-                if(chapter == allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter)
+                if(chapter == allChapters.chapters.chapter[(actual_chapter-1)].nextChapters.nextChapter)
                 {
-                    updateLastChapter(id_request, process.env.ACTUAL_CHAPTER);
-                    process.env.ACTUAL_CHAPTER = chapter;
+                    updateLastChapter(id_request, actual_chapter);
                     updateActualChapter(id_request, chapter);
-                    var chapterToRead = allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].description;
+                    var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
                     const speechOutput = WHISPER + chapterToRead + PAUSE;
-                    if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_death == true)
+                    if(allChapters.chapters.chapter[(chapter-1)].flag_death == true)
                     { 
                         chapterToRead += ' Purtroppo non sei riuscito a concludere la tua avventura. Ricomincia il \
                         tuo percorso e scegli una strada diversa pronunciando ricomincia dall\'inizio!';
                         updateActualChapter(id_request, 0);
                         updateLastChapter(id_request, 0);
                     }
-                    if(allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].flag_final == true)
+                    if(allChapters.chapters.chapter[(chapter-1)].flag_final == true)
                     { 
                         chapterToRead += ' Complimenti! Sei uscito vittorioso dalla tua avventura! Pronuncia stop per uscire dalla skill\
                         oppure prununcia ricomincia dal\'inizio per ricominciare la tua avventura percorrendo una strada diversa!';
@@ -432,7 +482,7 @@ function getNewChapter(chapter, id_request)
                     }
                     return buildResponseWithRepromt(speechOutput, false, '', '');
                 }
-                var speechOutput = 'Puoi proseguire solamente andando al capitolo: '+allChapters.chapters.chapter[(process.env.ACTUAL_CHAPTER-1)].nextChapters.nextChapter;
+                var speechOutput = 'Puoi proseguire solamente andando al capitolo: '+allChapters.chapters.chapter[(actual_chapter-1)].nextChapters.nextChapter;
                 return buildResponseWithRepromt(speechOutput, false, '', '');
             }
         }
@@ -447,7 +497,6 @@ function getNewChapter(chapter, id_request)
         if(chapter == 1)
         {
             updateLastChapter(id_request, 0);
-            process.env.ACTUAL_CHAPTER = chapter;
             updateActualChapter(id_request, chapter);
             var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
             const speechOutput = WHISPER + chapterToRead + PAUSE;
