@@ -198,7 +198,7 @@ function introductionRules()
     var speechOutput = 'Prima di iniziare il tuo viaggio, è importante conoscere \
                         quali abilità possiede Lupo Solitario, ovvero tu, che sarai \
                         il protagonista della storia! Avrai due caratteristiche principali: \
-                        combattività e resistenza. Se sei a disposizione del libro cartaceo, \
+                        combattività e resistenza. Se hai a disposizione del libro cartaceo, \
                         puoi determinare i valori iniziali delle tue abilità direttamente \
                         dalla tabella del destino, altrimenti puoi utilizzare il generatore \
                         di numeri casuali con l\'apposito comando offerto direttamente dalla skill.\ Ti \
@@ -234,8 +234,9 @@ function simulateRoundOfFight()
     speechOutput    += ' Aggiorna il tuo punteggio della resistenza e controlla se \
                         puoi procedere con il prossimo round o se tu o il tuo avversario \
                         avete esaurito i punti resistenza e siete deceduti. In caso \
-                        di morte, ricomincia la storia dall\'inizio con l\'apposito comando \
-                        perchè la tua avventura finisce qui. '
+                        di morte, ricomincia la storia dall\'inizio con l\'apposito comando, \
+                        perchè la tua avventura finisce qui, e ricomincia la tua storia con \
+                        l\'apposito comando!';
     var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
     return jsonObj;
 }
@@ -258,8 +259,11 @@ function simulateEntireFight()
         var speechOutput = 'Complimenti, hai vinto il combattimento!'
         speechOutput += ' Il combattimento è durato ' + rounds + ' round, e purtroppo \
                         hai perso ' + points + ' punti resistenza.';
-        speechOutput += ' Ricordati di tenere traccia della tua combattività e dei\
-                        tuoi punti resistenza per i prossimi combattimenti!';
+        speechOutput += ' Ricordati di tener traccia della tua combattività e dei\
+                        tuoi punti resistenza per i prossimi combattimenti! Se i punti resistenza \
+                        che hai perso sono più dei tuoi punti resistenza residui, purtroppo \
+                        la tua avventura finisce qua, e dovrai ricominciare la tua storia con \
+                        l\'apposito comando!';
         var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
         return jsonObj;
         
@@ -269,6 +273,7 @@ function simulateEntireFight()
         var speechOutput = 'Purtroppo hai perso tutti i tuoi punti resistenza. La tua \
                             avventura finisce qui. Ricomincia la tua storia pronunciando \
                             vai al capitolo 1, sperando questa volta di avere più fortuna!';
+        
         var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
         return jsonObj;
     }
@@ -279,28 +284,28 @@ function simulateEntireFight()
 function helpCommand()
 {
     var speechOutput    = 'Con questa skill potrai leggere in maniera dinamica un libro gioco.';
-    speechOutput       += ' Per iniziare la lettura del libro gioco pronuncia inizia la lettura.';
+    speechOutput       += ' Per iniziare la lettura del libro gioco pronuncia ,inizia la lettura,.';
     speechOutput       += ' Durante la lettura potrai, dove richiesto, tornare al capitolo precedente, \
-                            pronunciando \'torna al capitolo precedente\'.';
+                            pronunciando ,torna al capitolo precedente,.';
     speechOutput       += ' Oppure, potrai proseguire ai capitoli successivi indicati nel testo, \
-                            pronunciando \'vai al capitolo\' seguito dal numero del capitolo con il quale \
+                            pronunciando ,vai al capitolo, seguito dal numero del capitolo con il quale \
                             desideri procedere nella tua avventura.';
-    speechOutput       += ' Se vuoi rileggere il capitolo, ti basterà pronunciare \'rileggi\'. ';
+    speechOutput       += ' Se vuoi rileggere il capitolo, ti basterà pronunciare ,rileggi,. ';
     speechOutput       += ' Potrai inoltre ricominciare la lettura dall\'inizio del libro, perdendo però \
-                            tutti i progressi fatti, pronunciando \'ricomincia libro dall\'inizio\'. ';
+                            tutti i progressi fatti, pronunciando ,ricomincia libro dall\'inizio,. ';
     speechOutput       += ' Durante la tua avventura, dovrai affrontare combattimenti e scelte basate su \
                             numeri casuali estratti come ad esempio con il lancio di un dado. La skill ti \
-                            permette di simulare questo lancio di dado pronunciando \'estrai un numero casuale\
-                            tra numero 1 ed numero 2\', dove numero 1 e numero 2 sono i due estremi compresi dell\'intervallo da cui \
+                            permette di simulare questo lancio di dado pronunciando ,estrai un numero casuale\
+                            tra numero 1 ed numero 2, dove numero 1 e numero 2 sono i due estremi compresi nell\'intervallo da cui \
                             desideri estrarre il numero.';
-    speechOutput       += ' Se ti trovi davanti un combattimento, potrai simularlo pronunciando \'simula intero combattimento\'. \
+    speechOutput       += ' Se ti trovi davanti un combattimento, potrai simularlo pronunciando ,simula intero combattimento,. \
                             Ti verrà notificato l\'esito del combattimento con le informazioni necessarie come i punti \
                             di resistenza persi o il numero di round in cui il combattimento è stato eseguito.';
-    speechOutput       += ' Potrai inoltre simulare anche un solo round del combattimento pronunciando \'simula un round \
-                            del combattimento\'. Ti verranno poi comunicati il numero di punti resistenza persi da te e dal \
+    speechOutput       += ' Potrai inoltre simulare anche un solo round del combattimento pronunciando ,simula un round \
+                            del combattimento,. Ti verranno poi comunicati il numero di punti resistenza persi da te e dal \
                             tuo nemico.';
-    speechOutput       += ' Potrai infine uscire dalla skill, pronunciando \'stop\'.'
-    speechOutput       += ' Inizia ora la lettura pronunciando \'inizia la lettura\'.';
+    speechOutput       += ' Potrai infine uscire dalla skill, pronunciando ,stop,.'
+    speechOutput       += ' Inizia ora la lettura pronunciando ,inizia la lettura,.';
                               
     var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
     return jsonObj;
