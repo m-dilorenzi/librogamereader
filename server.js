@@ -158,7 +158,7 @@ app.post('/', requestVerifier, async function(req, res) {
             case 'restartBookIntent':
                 // the user wants to start reading the book all over again
                 console.log('Restart book...');
-                res.json(restartBook(1, id_request));
+                res.json(restartBook(0, id_request));
                 break;
 
             default:
@@ -171,27 +171,28 @@ app.post('/', requestVerifier, async function(req, res) {
 function helpCommand()
 {
     var speechOutput    = 'Con questa skill potrai leggere in maniera dinamica un libro gioco.';
-    speechOutput       += ' Per iniziare la lettura del libro gioco pronuncia inizia la lettura ';
+    speechOutput       += ' Per iniziare la lettura del libro gioco pronuncia \'inizia la lettura\'.';
     speechOutput       += ' Durante la lettura potrai, dove richiesto, tornare al capitolo precedente, \
-                            pronunciando torna al capitolo precedente.';
+                            pronunciando \'torna al capitolo precedente\'.';
     speechOutput       += ' Oppure, potrai proseguire ai capitoli successivi indicati nel testo, \
-                            pronunciando vai al capitolo seguito dal numero del capitolo con il quale \
+                            pronunciando \'vai al capitolo\' seguito dal numero del capitolo con il quale \
                             desideri procedere nella tua avventura.';
-    speechOutput       += ' Se vuoi rileggere il capitolo, ti basterà pronunciare rileggi. ';
-    speechOutput       += ' Potrai inoltre ricominciare la lettura dall\inizio del libro, perdendo però \
-                            tutti i progressi fatti, pronunciando ricomincia dall\'inizio. ';
+    speechOutput       += ' Se vuoi rileggere il capitolo, ti basterà pronunciare \'rileggi\'. ';
+    speechOutput       += ' Potrai inoltre ricominciare la lettura dall\'inizio del libro, perdendo però \
+                            tutti i progressi fatti, pronunciando \'ricomincia libro dall\'inizio\'. ';
     speechOutput       += ' Durante la tua avventura, dovrai affrontare combattimenti e scelte basate su \
                             numeri casuali estratti come ad esempio con il lancio di un dado. La skill ti \
-                            permette di simulare questo lancio di dado pronunciando estrai un numero casuale\
-                            tra x ed y, dove x ed y sono i due estremi compresi dell\'intervallo da cui \
+                            permette di simulare questo lancio di dado pronunciando \'estrai un numero casuale\
+                            tra a ed b\', dove a ed b sono i due estremi compresi dell\'intervallo da cui \
                             desideri estrarre il numero.';
-    speechOutput       += ' Se ti trovi davanti un combattimento, potrai simularlo pronunciando simula combattimento. \
+    speechOutput       += ' Se ti trovi davanti un combattimento, potrai simularlo pronunciando \'simula combattimento\'. \
                             Ti verrà notificato l\'esito del combattimento con le informazioni necessarie come i punti \
                             di resistenza persi o il numero di round in cui il combattimento è stato eseguito.';
-    speechOutput       += ' Potrai inoltre simulare anche un solo round del combattimento pronunciando simula un round \
-                            del combattimento. Ti verranno poi comunicati il numero di punti resistenza persi da te e dal \
+    speechOutput       += ' Potrai inoltre simulare anche un solo round del combattimento pronunciando \'simula un round \
+                            del combattimento\'. Ti verranno poi comunicati il numero di punti resistenza persi da te e dal \
                             tuo nemico.';
-    speechOutput       += ' Inizia ora la lettura pronunciando inizia la lettura.';
+    speechOutput       += ' Potrai infine uscire dalla skill, pronunciando \'stop\''
+    speechOutput       += ' Inizia ora la lettura pronunciando \'inizia la lettura\'.';
                               
     var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
     return jsonObj;
@@ -270,11 +271,12 @@ function restartBook(chapter, id_request)
 {
     const allChapters = convertToJson();
     // update into the database the actual chapter which will be
-    // the chapter number 1
+    // 0, which allow the user to start reading again the entire book
     updateActualChapter(id_request, chapter);
-    updateLastChapter(id_request, 0);
-    var chapterToRead = allChapters.chapters.chapter[(chapter-1)].description;
-    const speechOutput = WHISPER + chapterToRead + PAUSE;
+    updateLastChapter(id_request, chapter);
+    const speechOutput = WHISPER + 'Hai eliminato tutti i progressi della tua storia. \
+                                    Ora dovrai ricominciare il tuo viaggio dall\'inizio. \
+                                    Pronuncia \'vai al capitolo 1\' per ricominciare la lettura!' + PAUSE;
     return buildResponseWithRepromt(speechOutput, false, '', '');
 }
 
