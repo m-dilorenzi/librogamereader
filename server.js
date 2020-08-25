@@ -129,7 +129,7 @@ app.post('/', requestVerifier, async function(req, res) {
             
             case 'getLastChapterIntent':
                 // user wants to go back to the penultimate chapter he read
-                // if the user is reading the first chapter or or he has yet 
+                // if the user is reading the first chapter or he has yet 
                 // to start reading the book, an error will be notified by Alexa
                 if(actual_chapter == 0 || actual_chapter == 1)
                 {
@@ -143,8 +143,14 @@ app.post('/', requestVerifier, async function(req, res) {
             
             case 'readAgainIntent':
                 // user wants to read again the actual chapter
-                console.log('Read again actual chapter...');
-                res.json(readAgainChapter(actual_chapter));
+                if (actual_chapter != 0)
+                {
+                    console.log('Read again actual chapter...');
+                    res.json(readAgainChapter(actual_chapter));
+                }else{
+                    var speechOutput = 'Devi ancora iniziare la lettura del libro!';
+                    res.json(buildResponseWithRepromt(speechOutput, false, '', ''));
+                }
                 break;
 
             case 'getRandomNumberIntent':
@@ -171,7 +177,7 @@ app.post('/', requestVerifier, async function(req, res) {
 function helpCommand()
 {
     var speechOutput    = 'Con questa skill potrai leggere in maniera dinamica un libro gioco.';
-    speechOutput       += ' Per iniziare la lettura del libro gioco pronuncia \'inizia la lettura\'.';
+    speechOutput       += ' Per iniziare la lettura del libro gioco pronuncia inizia la lettura.';
     speechOutput       += ' Durante la lettura potrai, dove richiesto, tornare al capitolo precedente, \
                             pronunciando \'torna al capitolo precedente\'.';
     speechOutput       += ' Oppure, potrai proseguire ai capitoli successivi indicati nel testo, \
@@ -199,7 +205,7 @@ function helpCommand()
 }
 
 // function used to check if the user that made the request is already registered
-// to the database. If it is already registered, it return 'true', otherwise, it
+// to the database. If he is already registered, it returns 'true', otherwise, it
 // returns 'false' and the new user is added to the database by the function
 // addUser() 
 function checkUsers(allUsers, id_request)
