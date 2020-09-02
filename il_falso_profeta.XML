@@ -210,8 +210,8 @@ Pensa due numeri.
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>3242</nextChapter>
-			<nextChapter>395</nextChapter>
+			<nextChapter>242</nextChapter>
+			<nextChapter>95</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 15>
@@ -258,8 +258,8 @@ Pensa due numeri.
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>3273</nextChapter>
-			<nextChapter>3102</nextChapter>
+			<nextChapter>273</nextChapter>
+			<nextChapter>102</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 18>
@@ -740,8 +740,8 @@ Pensa a due numeri.
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>3161</nextChapter>
-			<nextChapter>3284</nextChapter>
+			<nextChapter>161</nextChapter>
+			<nextChapter>284</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 47>
@@ -1212,8 +1212,8 @@ Altrimenti [Prosegui. [30]]
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>3271</nextChapter>
-			<nextChapter>3182</nextChapter>
+			<nextChapter>271</nextChapter>
+			<nextChapter>182</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 78>
@@ -1245,8 +1245,8 @@ Il monogramma inciso su una lastrina di pietra rossa, ritrovata presso la Rocca 
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>3188</nextChapter>
-			<nextChapter>3236</nextChapter>
+			<nextChapter>188</nextChapter>
+			<nextChapter>236</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 80>
@@ -1286,7 +1286,7 @@ Esci dalla camera pieno di vergogna e affranto, hai fallito nel tuo incarico, or
 La tua avventura termina qui.
 </description>
 		<flag_fixed>false</flag_fixed>
-		<flag_death>false</flag_death>
+		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
 		</nextChapters>
@@ -1521,7 +1521,7 @@ Esci dalla camera pieno di vergogna e affranto, hai fallito nel tuo incarico, or
 La tua avventura termina qui.
 </description>
 		<flag_fixed>false</flag_fixed>
-		<flag_death>false</flag_death>
+		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
 		</nextChapters>
@@ -1625,8 +1625,8 @@ Puoi iniziare la ricerca pensando a due numeri.
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>3223</nextChapter>
-			<nextChapter>353</nextChapter>
+			<nextChapter>223</nextChapter>
+			<nextChapter>53</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 105>
@@ -2028,8 +2028,8 @@ Altrimenti [Prosegui. [30]]
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>389</nextChapter>
-			<nextChapter>3216</nextChapter>
+			<nextChapter>89</nextChapter>
+			<nextChapter>216</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 128>
@@ -2452,8 +2452,8 @@ I sacerdoti terminano il rito d'esorcismo con l'orazione e la benedizione finale
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>4193</nextChapter>
-			<nextChapter>4105</nextChapter>
+			<nextChapter>193</nextChapter>
+			<nextChapter>105</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 153>
@@ -2519,8 +2519,8 @@ Per iniziare la tua ricerca pensa a due numeri.
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>3247</nextChapter>
-			<nextChapter>318</nextChapter>
+			<nextChapter>247</nextChapter>
+			<nextChapter>18</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 158>
@@ -2622,8 +2622,8 @@ Non potrai più interrogare il professore su questa foto.
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>385</nextChapter>
-			<nextChapter>3297</nextChapter>
+			<nextChapter>85</nextChapter>
+			<nextChapter>297</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 165>
@@ -2664,8 +2664,8 @@ Punti il cono di luce sul volto del Cristo: "E quello cos'è?" domandi a voce al
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>3260</nextChapter>
-			<nextChapter>355</nextChapter>
+			<nextChapter>260</nextChapter>
+			<nextChapter>55</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 168>
@@ -2921,7 +2921,7 @@ Esci dalla camera pieno di vergogna e affranto, hai fallito nel tuo incarico, or
 La tua avventura termina qui.
 </description>
 		<flag_fixed>false</flag_fixed>
-		<flag_death>false</flag_death>
+		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
 		</nextChapters>
@@ -3004,8 +3004,8 @@ Quando i demoni parlano di "consacrazione" significa che molto probabilmente c'�
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>5224</nextChapter>
-			<nextChapter>5254</nextChapter>
+			<nextChapter>224</nextChapter>
+			<nextChapter>254</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 191>
@@ -3178,8 +3178,8 @@ La dottoressa ti spiega che il monastero è stato abbandonato negli anni '40 dop
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>498</nextChapter>
-			<nextChapter>4289</nextChapter>
+			<nextChapter>98</nextChapter>
+			<nextChapter>289</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 202>
@@ -3420,8 +3420,8 @@ La tua avventura termina qui.
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>392</nextChapter>
-			<nextChapter>3166</nextChapter>
+			<nextChapter>92</nextChapter>
+			<nextChapter>166</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 219>
@@ -3676,8 +3676,8 @@ Nella sala non c'è altro di interessante.
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>3149</nextChapter>
-			<nextChapter>3292</nextChapter>
+			<nextChapter>149</nextChapter>
+			<nextChapter>292</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 236>
@@ -3745,7 +3745,7 @@ Esci dalla camera pieno di vergogna e affranto, hai fallito nel tuo incarico, or
 La tua avventura termina qui.
 </description>
 		<flag_fixed>false</flag_fixed>
-		<flag_death>false</flag_death>
+		<flag_death>true</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
 		</nextChapters>
@@ -4394,8 +4394,8 @@ Altrimenti [Prosegui. [30]]
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>3151</nextChapter>
-			<nextChapter>3225</nextChapter>
+			<nextChapter>151</nextChapter>
+			<nextChapter>225</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 284>
@@ -4460,14 +4460,14 @@ Se ricordi bene il libro di magia che hai consultato ad ogni demone era associat
 		<flag_death>false</flag_death>
 		<flag_final>false</flag_final>
 		<nextChapters>
-			<nextChapter>45108</nextChapter>
-			<nextChapter>136109</nextChapter>
-			<nextChapter>325110</nextChapter>
-			<nextChapter>666111</nextChapter>
-			<nextChapter>175112</nextChapter>
-			<nextChapter>260113</nextChapter>
-			<nextChapter>369114</nextChapter>
-			<nextChapter>000116</nextChapter>
+			<nextChapter>108</nextChapter>
+			<nextChapter>109</nextChapter>
+			<nextChapter>110</nextChapter>
+			<nextChapter>111</nextChapter>
+			<nextChapter>112</nextChapter>
+			<nextChapter>113</nextChapter>
+			<nextChapter>114</nextChapter>
+			<nextChapter>116</nextChapter>
 		</nextChapters>
 	</chapter>
 	<chapter number = 287>
