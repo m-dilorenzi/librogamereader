@@ -195,7 +195,7 @@ app.post('/', requestVerifier, async function(req, res) {
 // with him during the story
 function introductionRules()
 {
-    var speechOutput = 'Prima di iniziare il tuo viaggio, è importante conoscere \
+    /* var speechOutput = 'Prima di iniziare il tuo viaggio, è importante conoscere \
                         quali abilità possiede Lupo Solitario, ovvero tu, che sarai \
                         il protagonista della storia! Avrai due caratteristiche principali: \
                         combattività e resistenza. Se hai a disposizione del libro cartaceo, \
@@ -212,7 +212,47 @@ function introductionRules()
                         proseguire per la relativa strada seguendo le regole specificate nell\'introduzione \
                         del libro cartaceo. Una volta che hai esaurito i tuoi punti resistenza, la tua \
                         avventura finisce, e potrai ricominciare la tua storia sperando di avere fortuna. \
-                        In bocca al lupo Lupo Solitario!';
+                        In bocca al lupo Lupo Solitario!'; */
+    var speechOutput = 'È l’autunno del 1995, più di un anno è trascorso dal tuo incarico in Norvegia, da allora hai \
+    continuato i tuoi studi sui movimenti pagani, le sette, i culti, pubblicando diversi articoli su riviste della Chiesa \
+    e su L’osservatore Romano, hai partecipato a diverse conferenze per il CESNUR, il Centro Studi Nuove Religioni, ed a \
+    trasmissioni televisive locali, e ti è stato commissionato un libro per conto delle edizioni San Paolo che raccolga il \
+    tuo lavoro svolto fin qui. Ritieni che divulgare il più possibile queste informazioni possa essere un valido strumento \
+    perché le persone si possano difendere dalle influenze del Maligno, riconoscendole e sapendo a chi rivolgersi. È una uggiosa \
+    mattina d’ottobre quando un confratello ti avvisa che l’abate desidera vederti nel suo studio.  Lasci immediatamente quello \
+    che stai facendo e percorri i silenti e ampi corridoi dell’abbazia per raggiungere il tuo superiore. Raggiungi la porta \
+    dell’abate, nonostante il cartello “Entrare senza bussare”, bussi e poi apri la porta. \'Oh, padre Alessandro, entra e \
+    accomodati.\'. L’Abate è al telefono con un qualche vescovo a giudicare dal tono, la sua scrivania è al solito ricoperta di \
+    libri, plichi, fogli, documenti, richieste che giungono da ogni dove, lettere che riceve e scrive. Ti siedi di fronte a lui \
+    e attendi che finisca la telefonata. Quando l’abate attacca il ricevitore si inforca gli occhiali e prende una lettera dal \
+    cumulo che sommerge il suo tavolo. \'Sono molto contento del tuo lavoro\', ti dice \'le tue conoscenze sono sempre più \
+    approfondite e ho notato che anche il tuo spirito si è decisamente rafforzato dopo la tua esperienza dello scorso anno.\' \
+    \'Beh, sì, devo dire che è stata molto dura.\'. \'Bene, perché dovrò darti un nuovo incarico, e ci vorrà tutta la tua fede \
+    e le tue capacità per affrontarlo.\'. \'Vi ascolto.\'. \'Ho ricevuto una lettera stamani, è di un mio vecchio amico, \
+    Frate Zeno, un cappuccino in odor di santità che una decina di anni fa decise di ritirarsi alla vita di eremita sugli \
+    Appennini umbri. Aveva la fama di curare le persone e scacciare di demòni con l’imposizione delle mani e la preghiera, e \
+    queste figure la Chiesa, purtroppo, le vede come ingombranti piuttosto che come risorse. Prima ancora che da Roma partisse \
+    una indagine nei suoi confronti, come era accaduto al buon Padre Pio da Pietralcina, decise di lasciare la vita pubblica e \
+    si stabilì in un eremo, dove vive costantemente in preghiera. Alcune settimane fa ricevette nel suo eremo la visita di un \
+    vecchio sacerdote con una coppia di genitori in cerca di aiuto. I due sostenevano che la loro figlia di 8 anni sia posseduta \
+    dal demonio, erano anni che giravano per specialisti della psichiatria, l’avevano sottoposta ad esami e cure di ogni tipo, \
+    ma non c’era niente da fare. Col passare del tempo stava sempre più male, con scatti d’ira in cui gridava oscenità e bestemmie \
+    con voce gutturale, aveva dimostrato una forze incredibile per una bambina della sua età, e in alcuni casi aveva anche \
+    profetizzato morti e malattie di persone che l’avevano incrociata. Frate Zeno si commosse e, senza avere alcun permesso da \
+    parte della Chiesa, acconsentì a vedere la bambina. Una volta raggiunta la casa della bambina chiese di potere restare da solo \
+    con lei nella sua stanza. Non appena vi entrò la bambina iniziò ad insultarlo, fissandolo con occhi spietati e omicidi, e se \
+    non fosse stato per le cinghie che la tenevano ferma l’avrebbe certamente aggredito. Bastò un breve colloquio per convincersi \
+    che effettivamente c’era uno spirito immondo dentro la bambina. Iniziò così un lungo e faticoso esorcismo, ma dopo due settimane \
+    ancora non vedeva miglioramenti. Sostiene che dentro la bambina ci sia il demone più potente con cui abbia mai avuto a che \
+    fare dopo il Diavolo, e che non riuscirà mai a scacciarlo finché non saprà il suo nome, e nonostante i suoi sforzi ancora non \
+    è riuscito a farglielo dire.\'. \'E’ una storia terribile\', commenti \'ma io cosa centro?\'. \'Frate Zeno non ce la farà mai \
+    da solo, ha bisogno che qualcuno scopra il nome di quello spirito immondo. La bambina è stata adottata alcuni anni fa, il suo \
+    legame con il demone è molto forte e radicato probabilmente perché la piccola gli è stata votata sin dalla nascita. Forse la \
+    madre apparteneva a qualche setta satanica, non sarebbe la prima volta che accade.\'. \'Quindi vuole che scopra la storia della \
+    bambina per trovare il nome di quel demonio?\'. \'Esattamente. Frate Zeno ha scritto nella lettera dove la bambina è stata \
+    adottata, è il tuo unico indizio.\'. L’abate ti porge un foglio con il recapito della persona a cui rivolgerti. \'Che il \
+    Signore possa guidarti e ti protegga, padre Alessandro.\'. Prendi il foglietto, saluti l’abate e ti congedi. Inizia \
+    l’avventura al 1. Pronuncia , inizia la lettura, per iniziare subito, in bocca al lupo!';
     var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
     return jsonObj;
 }
@@ -407,13 +447,18 @@ function helloMessage()
 {
     var speechOutput  = 'Ciao! Benvenuto su Libro Game Reader! Con questa skill potrai \
                         interagire con un libro gioco in maniera dinamica!';
-    speechOutput += ' Pronuncia ,scopri le funzioni, per ascoltare quali comandi puoi utilizzare \
+    /* speechOutput += ' Pronuncia ,scopri le funzioni, per ascoltare quali comandi puoi utilizzare \
                         con questa skill, oppure pronuncia ,leggi le regole del gioco, per \
                         scoprire le meccaniche e le caratteristiche con il quale Lupo Solitario \
                         avrà a che fare lungo il suo cammino. In alternativa, se hai già utilizzato la skill \
                         e sei a conoscenza dei suoi comandi, pronuncia ,inizia la lettura, per iniziare \
                         o riprendere la lettura da dove avevi lasciato l\'ultima volta!'
-    
+    */
+    speechOutput += 'Pronuncia ,scopri le funzioni, per ascoltare quali comandi puoi utilizzare \
+                con questa skill, oppure pronuncia ,leggi le regole del gioco, per \
+                scoprire il contesto in cui ti trovi ed il prologo della storia de ,Il Falso Profeta di Cagliostro,.\
+                In alternativa, se hai già utilizzato la skill e sei a conoscenza dei suoi comandi, pronuncia \
+                ,inizia la lettura, per iniziare o riprendere la lettura da dove avevi lasciato l\'ultima volta!';
     var jsonObj = buildResponseWithRepromt(speechOutput, false, '', '');
     return jsonObj;
 }
@@ -423,8 +468,8 @@ function startReading(actual_chapter)
 {
     if(actual_chapter == 0)
     {
-        var speechOutput = 'Inizia ora a leggere il libro The Chasm of Doom, il quarto capitolo della \
-        famosa serie Lupo Solitario! Pronuncia vai al capitolo 1 per iniziare la lettura!';
+        var speechOutput = 'Inizia ora a leggere il , Il Falso Porfeta di Cagliostro,! \
+        Pronuncia vai al capitolo 1 per iniziare la lettura!';
     }else{
         var speechOutput = 'Riprendi la lettura dal capitolo '+actual_chapter+'. Pronuncia rileggi\
         per riascoltarlo.';
